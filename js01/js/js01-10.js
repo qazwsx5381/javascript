@@ -18,5 +18,5 @@ let list = ''
     list += '<tr><td>true</td><td>true</td><td>true</td></tr>';
     list += '</table>';
     list += '<hr>';
-    list += `<button type="button" onclick="location.href='../index.html'" class="design">돌아가기</button>`;
+    list += `<button type="button" onclick="location.href='${javascript/index.html}'" class="design">돌아가기</button>`;
 document.write(list)
