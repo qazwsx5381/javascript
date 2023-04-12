@@ -8,5 +8,5 @@ let list = ''
     list += `<tr><td class='b'>변수--</td><td>기존의 변수 값에 1을 뺍니다.(전위)</td><td>alert(--number) 답 : ${--input}</td><td class='b'>4</td></tr>`;
     list += '</table>'
     list += '<hr>';
-    list += `<button type="button" onclick="location.href='../../index.html'" class="design">돌아가기</button>`;
+    list += `<button type="button" onclick="location.href='../index.html'" class="design">돌아가기</button>`;
 document.write(list)
