@@ -1,0 +1,13 @@
+th, td{
+    border: 1px solid black;
+}
+th {
+    background-color: rgb(85, 212, 216);
+    text-align: center;
+}
+.a {
+    border-collapse: collapse;
+}
+.b {
+    text-align: center;
+}
