@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 식별자를 지정할 때 var(마음대로 선언), const(최초 선언, 수정불가), let(최초 선언, 수정 가능) / 주로 let으로 식별자를 지정함.
+        console.log('====================================')
+        let str1 = '가나다'  //예제입니다.
+        let str2 = '라마'  //예제입니다.
+        let str3 = '바사아'  //예제입니다.
+        let str4 = '자차카타'  //예제입니다.
+        let str5 = '파하'  //예제입니다.
+        let str = str1+str2+str3+str4+str5  //예제입니다.
+        console.log(str)
+        console.log('====================================')
+        let strCar = str[8]+str[9]+str[1]+str[6]+str[8]
+        console.log(strCar)
+        console.log('====================================')
+        console.log('str의 길이는 '+str.length)
+        console.log('strCar의 길이는 '+strCar.length)
+        console.log('====================================')
+        //eng 라는 변수에 a부터 z까지 차례로 입력 후 내용을 출력하고 그 길이를 나타내라.
+        let eng = 'abcdefghijklmnopqrstuvwxyz'
+        console.log(eng)
+        console.log('eng의 길이는 '+eng.length)
+        console.log('====================================')
+        console.log('str의 길이와 strCar의 길이비교 : '+ (str.length > strCar.length))
+    </script>
+</body>
+</html>

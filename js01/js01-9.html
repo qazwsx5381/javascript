@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상수와 변수, 복합대입연산자</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // const : 변하지 않는 값을 대입
+        // 선언 : const 이름 = 값
+        // let : 변할 가능성이 있는 값을 대입
+        // 선언 : let 이름 = 값
+        console.log("<복합대입연산자>")
+        console.log("===============================")
+        let a=10
+        let b=7
+        let c=11
+        let d=13
+        let e=11
+        console.log(`a=${a}, b=${b}, c=${c}, d=${d}, e=${e}`)    // a=10, b=7, c=11, d=13, e=11
+        console.log(`a+=1 => ${a+=1}`)                           // a+=1 => 11
+        console.log(`a+=1 => ${a+=1}`)                           // a+=1 => 12
+        console.log(`b-=2 => ${b-=2}`)                           // b-=2 => 5
+        console.log(`b-=2 => ${b-=2}`)                           // b-=2 => 3
+        console.log(`c*=2 => ${c*=2}`)                           // c*=2 => 22
+        console.log(`c*=2 => ${c*=2}`)                           // c*=2 => 44
+        console.log(`d/=2 => ${d/=2}`)                           // d/=2 => 6.5
+        console.log(`d/=2 => ${d/=2}`)                           // d/=2 => 3.25
+        console.log(`e%=3 => ${e%=3}`)                           // e%=3 => 2
+        console.log(`e%=2 => ${e%=2}`)                           // e%=2 => 0
+    </script>
+</head>
+<body>
+    <h1>상수와 변수, 복합대입연산자</h1>
+    <h2>
+        <p><em>
+        const : 변하지 않는 값을 대입<br>
+        선언 : const 이름 = 값<br>
+        let : 변할 가능성이 있는 값을 대입<br>
+        선언 : let 이름 = 값<br>
+        </em></p>
+    </h2>
+    <h2>
+        <pre>
+        javascript 서식                                          // 결과
+        console.log(`a=${a}, b=${b}, c=${c}, d=${d}, e=${e}`)    // a=10, b=7, c=11, d=13, e=11
+        console.log(`a+=1 => ${a+=1}`)                           // a+=1 => 11
+        console.log(`a+=1 => ${a+=1}`)                           // a+=1 => 12
+        console.log(`b-=2 => ${b-=2}`)                           // b-=2 => 5
+        console.log(`b-=2 => ${b-=2}`)                           // b-=2 => 3
+        console.log(`c*=2 => ${c*=2}`)                           // c*=2 => 22
+        console.log(`c*=2 => ${c*=2}`)                           // c*=2 => 44
+        console.log(`d/=2 => ${d/=2}`)                           // d/=2 => 6.5
+        console.log(`d/=2 => ${d/=2}`)                           // d/=2 => 3.25
+        console.log(`e%=3 => ${e%=3}`)                           // e%=3 => 2
+        console.log(`e%=2 => ${e%=2}`)                           // e%=2 => 0
+        </pre>
+    </h2>
+    <hr>
+    <button type="button" onclick="location.href='../index.html'" class="design">돌아가기</button>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>불자료형</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        const b1 = !true
+        const b2 = !!false
+        const b3 = 57>333
+        const b4 = (123 == '123')
+        const b5 = '사랑'>'하마'
+        console.log('!true : '+b1) // !true : false
+        console.log('!!false : '+b2) // !!false : false
+        console.log('57>333 : '+b3) // 57>333 : false
+        console.log("123 == '123' : "+b4) // 123 == '123' : true
+        console.log('"사랑">"하마" : '+b5) // "사랑">"하마" : false
+    </script>
+</head>
+<body>
+    <h1>불자료형</h1>
+    <h2>
+        <pre>
+        javascript 서식                   //     결과
+        console.log('!true : '+b1)        // !true : false
+        console.log('!false : '+b2)       // !false : true
+        console.log('!!false : '+b2)      // !!false : false → ! 불연산자 2번 사용
+        console.log('57>333 : '+b3)       // 57>333 : false
+        console.log("123 == '123' : "+b4) // 123 == '123' : true
+        console.log('"사랑">"하마" : '+b5) // "사랑">"하마" : false
+        </pre>
+    </h2>
+    <hr>
+    <button type="button" onclick="location.href='../index.html'" class="design">돌아가기</button>
+</body>
+</html>
