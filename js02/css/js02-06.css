@@ -1,15 +1,17 @@
 table th, td{
     border: 1px solid black;
-    padding: 2px 6px;
+    padding: 2px 10px;
+    width: 8rem;
+    text-align: center;
 }
 th { 
     background-color: rgba(79, 224, 224, 0.9);
 }
-tr:nth-child(2n+3){
-    background-color: rgba(251, 255, 0, 0.6);
+tr:nth-child(2n+3){   /* 짝수자리 */
+    background-color: rgba(251, 255, 0, 0.5);
 }
-tr:nth-child(2n+2){
-    background-color: rgba(255, 0, 0, 0.6);
+tr:nth-child(2n+2) {  /* 홀수자리 */
+    background-color: rgba(255, 0, 0, 0.5);
 }
 .a{
     border-collapse: collapse;
