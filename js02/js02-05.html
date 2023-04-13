@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>원의 넓이, 둘레구하기</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        // 반지름을 입력받아 원의 둘레와 넓이를 구하는 사이트를 만들자.
+        const r = prompt('반지름의 길이를 입력하시오.')
+        // prompt()*1 => number로 인식
+        const pi = 3.14
+        let list = ''
+            list += `<div>입력한 반지름의 길이 : ${Number(r)} cm</div>`
+            list += `<div>원의 둘레 : ${2*pi*Number(r)} cm</div>`
+            list += `<div>원의 넓이 : ${Number(r)*Number(r)*pi} cm<sup>2</sup></div>`
+        document.write(list)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
