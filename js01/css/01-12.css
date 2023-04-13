@@ -1,0 +1,14 @@
+table th, td{
+    border: 1px solid rgba(18, 194, 106, 0.7);
+    text-align: center;
+    width: 80px;
+}
+th{
+    background-color: rgba(183, 224, 204, 0.9);
+}
+.a {
+    border-collapse: collapse;
+}
+mark{
+    border: 1px solid black;
+}
