@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>확률게임</title>
+    <style>
+        div {
+            margin: 30px;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px;
+            text-align: center;
+            padding: 20px;
+            width: 500px;
+            background-color: rgba(159, 221, 108, 0.5);
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js"></script>
+    <script>
+        const now = dayjs()
+        let con = confirm('1은 확인을, 0은 취소를 눌러주세요.')
+        let random = now.get('ms')
+        let a1 = Boolean(random%2)
+        console.log(random)
+        console.log(typeof a1)
+        console.log(typeof con)
+        if(a1 === con) {
+            document.write(`<div>당신이 이겼습니다.  승리를 축하합니다.<br>ms 값 / 랜덤숫자값 : ${random} / ${Number(a1)}</div>`)
+        } 
+        else {
+            document.write(`<div>당신이 졌습니다.<br>ms 값 / 랜덤숫자값 : ${random} / ${Number(a1)}</div>`)
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

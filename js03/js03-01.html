@@ -8,13 +8,14 @@
     <script>
         const date=new Date()
         const hour=date.getHours()
-        if(hour==0) {
+        console.log(typeof hour)
+        if(hour===0) {
             alert(`오전 ${hour}시입니다.`)
         }
         if(0<hour<12) {
             alert(`오전 ${hour}시입니다.`)
         }
-        if(hour==12) {
+        if(hour===12) {
             alert(`오후 ${hour}시입니다.`)
         }
         if(hour>=12) {

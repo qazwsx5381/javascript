@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if else 조건문</title>
+    <style>
+        span{
+            display: inline-block;
+            border: 1px solid black;
+            margin-top: 100px;
+            padding: 10px;
+            margin: 2rem;
+            width: 150px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 3px 3px 3px;
+            background-color: rgba(248, 166, 166, 0.5);
+        }
+    </style>
+    <script>
+        const a1 = Number(prompt('점수를 입력하세요'))
+        let a2
+        if(a1 > 100 || a1 < 0){
+            a2 = "Error"
+        }
+        if(a1 === 100){
+            a2 = "A+"
+        }
+        if(100 > a1 && a1 >= 90){
+            a2 = "A"
+        }
+        if(90 > a1 && a1 >= 80){
+            a2 = "B"
+        }
+        if(80 > a1 && a1 >= 70){
+            a2 = "C"
+        }
+        if(70 > a1 && a1 >= 60){
+            a2 = "D"
+        }
+        if(a1 < 60){
+            a2 = "F"
+        }
+        alert(`${a2} 입니다.`)
+        console.log(`${a2} 입니다.`)
+        document.write(`<span>${a2} 입니다.</span>`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

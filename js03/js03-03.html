@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if else 조건문</title>
+    <style>
+        
+    </style>
+    <script>
+        const a1 = Number(prompt('점수를 입력하세요'))
+        let a2
+        if(a1 > 100 || a1 < 0){
+            a2 = "Error"
+        }
+        else if(a1 === 100){
+            a2 = "A+"
+        }
+        else if(a1 >= 90){
+            a2 = "A"
+        }
+        else if(a1 >= 80){
+            a2 = "B"
+        }
+        else if(a1 >= 70){
+            a2 = "C"
+        }
+        else if(a1 >= 60){
+            a2 = "D"
+        }
+        else {
+            a2 = "F"
+        }
+        alert(`${a2} 입니다.`)
+        console.log(`${a2} 입니다.`)
+        let list = ''
+            list += `<table>`
+            list += `<tr><th>평가기준</th><th>내 점수 : ${a1} 점</th></tr>`
+            list += `<tr><td>A+</td><td>100점</td></tr>`
+            list += `<tr><td>A</td><td>90점 이상 100점 미만</td></tr>`
+            list += `<tr><td>B</td><td>80점 이상 90점 미만</td></tr>`
+            list += `<tr><td>C</td><td>70점 이상 80점 미만</td></tr>`
+            list += `<tr><td>D</td><td>60점 이상 70점 미만</td></tr>`
+            list += `<tr><td>F</td><td>60점 미만</td></tr>`
+            list += `<tr><th>내 학점</th><th>${a2}</th></tr>`
+            list += `</table>`
+        document.write(list)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
