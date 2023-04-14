@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>거스름돈 변환기</title>
+    <link rel="stylesheet" href="js03-13.css">
+    <script>
+        let input = prompt('거스름돈을 입력하세요.','')*1
+        let a1, a2, a3, a4, a5, a6, a7, a8
+        console.log(parseInt((input%50000)/10000))
+        if(input >= 50000){
+            a1 = parseInt(input/50000)
+        } else {
+            a1=0
+        }
+        if(input%50000 >= 10000){
+            a2 = parseInt(input%50000/10000)
+        } else {
+            a2=0
+        }
+        if((input%50000)%10000 >= 5000){
+            a3 = parseInt((input%50000)%10000/5000)
+        } else {
+            a3=0
+        }
+        if(((input%50000)%10000)%5000 >= 1000){
+            a4 = parseInt(((input%50000)%10000)%5000/1000)
+        } else {
+            a4=0
+        }
+        if((((input%50000)%10000)%5000)%1000 >= 500){
+            a5 = parseInt((((input%50000)%10000)%5000)%1000/500)
+        } else {
+            a5=0
+        }
+        if(((((input%50000)%10000)%5000)%1000)%500 >= 100){
+            a6 = parseInt(((((input%50000)%10000)%5000)%1000)%500/100)
+        } else {
+            a6=0
+        }
+        if((((((input%50000)%10000)%5000)%1000)%500)%100 >= 50){
+            a7 = parseInt((((((input%50000)%10000)%5000)%1000)%500)%100/50)
+        } else {
+            a7=0
+        }
+        if(((((((input%50000)%10000)%5000)%1000)%500)%100)%50 >= 10){
+            a8 = parseInt(((((((input%50000)%10000)%5000)%1000)%500)%100)%50/10)
+        } else {
+            a8=0
+        }
+        let list = ''
+            list += `<h1>입력하신 <mark>${input}원</mark>을 분리하면</h1>`
+            list += `<table class="a">`
+            list += `<tr><th>잔돈</th><th>갯수</th></tr>`
+            list += `<tr><td class="b">5만원권</td><td class="c">${a1}장</td></tr>`
+            list += `<tr><td class="b">1만원권</td><td class="c">${a2}장</td></tr>`
+            list += `<tr><td class="b">5천원권</td><td class="c">${a3}장</td></tr>`
+            list += `<tr><td class="b">1천원권</td><td class="c">${a4}장</td></tr>`
+            list += `<tr><td class="b">5백원</td><td class="c">${a5}장</td></tr>`
+            list += `<tr><td class="b">1백원</td><td class="c">${a6}장</td></tr>`
+            list += `<tr><td class="b">50원</td><td class="c">${a7}장</td></tr>`
+            list += `<tr><td class="b">10원</td><td class="c">${a8}장</td></tr>`
+            list += `</table>`
+        document.write(list)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
