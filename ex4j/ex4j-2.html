@@ -6,23 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>랜덤</title>
     <script>
-        /* Math.floor(Math.random() // 0에서 1사이의 숫자를 랜덤으로 추출.
-        Math.floor(Math.random()*100) // 0에서 100까지의 숫자를 랜덤으로 추출 ( 정수 갯수 : 101개 )*/
-        const ran = Math.random()
+    /*  Math.floor(Math.random() // 0에서 1사이의 숫자를 랜덤으로 추출.
+        Math.floor(Math.random()*100) // 0에서 100까지의 정수를 랜덤으로 추출  */
+        const ran = Math.floor(Math.random()*100)
         console.log(ran)
-        if( ran >= 0.1){
+        console.log(typeof ran)
+        if( ran >= 10){
             //alert('일반템입니다.')
-            console.log('%c일반템입니다.',"background-color : black; color: white;")
-        } else if( ran >= 0.05){
+            console.log('%c일반템입니다.',"background-color : black; color: white; font-size:2rem; border:1px solid red;")
+        } else if( ran >= 5){
             //alert('레어템입니다.')
-            console.log('%c레어템입니다.',"background-color : black; color: yellow;")
-        } else if( ran >= 0.02){
+            console.log('%c레어템입니다.',"background-color : black; color: yellow; font-size:2rem; border:1px solid red;")
+        } else if( ran >= 2){
             //alert('유니크템입니다.')
-            console.log('%c유니크템입니다.',"color: green;")
-        } else if( ran < 0.02){
+            console.log('%c유니크템입니다.',"background-color : black; color: green; font-size:2rem; border:1px solid red;")
+        } else {
             //alert('레전드템입니다.')
-            console.log('%c레전드템입니다.',"background-color : black; color: gold;")
-        } 
+            console.log('%c레전드템입니다.',"background-color : black; color: gold;  font-size:2rem; border:1px solid red;")
+        }
     </script>
 </head>
 <body>

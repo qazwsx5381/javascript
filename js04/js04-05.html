@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 예제</title>
+    <style>
+        span{
+            display: inline-block;
+            margin: 20px;
+            background-color: rgba(194, 141, 141, 0.548);
+        }
+    </style>
+    <script>
+        const 과일 = ['딸기', '바나나', '사과', '수박', '배', '키위', '복숭아', '포도']
+        const input = prompt(`${과일} 중 제거하고 싶은 항목을 입력하시오.`,'입력해주세요')
+        const input2 = prompt(`${과일} 외에 추가하고 싶은 항목을 입력하시오.`,'입력해주세요')
+        console.log(과일)
+        과일.splice(과일.indexOf(input),1)
+        console.log(과일)
+        document.write(`<span>요청하신 <mark>${input}</mark>을(를) 제거한 품목은 ${과일}입니다.</span>`)
+        과일.splice(과일.length-2,0,input2)
+        console.log(과일)
+        document.write(`<span>요청하신 <mark>${input2}</mark>을(를) 추가한 품목은 ${과일}입니다.</span>`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

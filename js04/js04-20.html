@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const input = ['사과', '딸기']
+        let a1
+        while(true) {
+            let input1 = prompt("장바구니에 추가할 것을 입력하시오.");
+            if (input1 === "그만") {
+                a1 = input
+            break;
+            } else {
+                input.unshift(input1)
+                input1
+            }
+        }
+        document.write(`장바구니에 담긴 항목은 ${a1}입니다.`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

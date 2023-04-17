@@ -8,7 +8,16 @@
     <link rel="stylesheet" href="css/js02-06.css">
     <script>
         // 2에서 9까지의 수 중 하나를 구구단을 페이지에 나타내자
-        const input = Math.floor(Number(prompt('2에서 9까지의 수 중에 하나를 입력하시오.')))
+        let input
+        while(true) {
+            let input1 = prompt("2에서 9까지의 수 중에 하나를 입력하시오.");
+            if (input1 >= 2 && input1 <= 9) {
+                input = Number(Math.floor(input1))
+            break;
+            } else {
+                input1
+            }
+        }
         console.log(typeof input)
         let list = ''
             list += `<table class="a">`
