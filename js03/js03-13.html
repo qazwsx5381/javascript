@@ -9,9 +9,11 @@
     <script>
         let input = prompt('거스름돈을 입력하세요.','')*1
         let a1, a2, a3, a4, a5, a6, a7, a8
-        console.log(parseInt((input%50000)/10000))
         if(input >= 50000){
             a1 = parseInt(input/50000)
+        //  1순위) a1 = Math.floor(input/50000)
+        //  2순위) a1 = arseInt(input/50000)
+        //  3순위) a1 = ~~(input/50000)
         } else {
             a1=0
         }
