@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤</title>
+    <script>
+        /* const ran = Math.floor(Math.random()*100) // 0에서 1사이의 숫자를 랜덤으로 추출.
+        console.log(ran) */
+        const ran = Math.random()
+        console.log(ran)
+        if( ran >= 0.1){
+            //alert('일반템입니다.')
+            console.log('%c일반템입니다.',"background-color : black; color: white;")
+        } else if( ran >= 0.05){
+            //alert('레어템입니다.')
+            console.log('%c레어템입니다.',"background-color : black; color: yellow;")
+        } else if( ran >= 0.02){
+            //alert('유니크템입니다.')
+            console.log('%c유니크템입니다.',"color: green;")
+        } else if( ran < 0.02){
+            //alert('레전드템입니다.')
+            console.log('%c레전드템입니다.',"background-color : black; color: gold;")
+        } 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
