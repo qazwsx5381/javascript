@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문(배열)</title>
+    <style>
+        .a{
+            background-color: rgba(74, 211, 165, 0.473);
+            color: rgb(0, 0, 0);
+            width: 150px;
+            box-shadow: 2px 2px 5px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .a:hover{
+            background-color: rgba(223, 170, 91, 0.473);
+            color: black;
+            width: 150px;
+            box-shadow: 2px 2px 3px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        #b{
+            background-color: rgba(74, 211, 165, 0.473);
+            color: rgb(0, 0, 0);
+            width: 150px;
+            box-shadow: 2px 2px 5px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    </style>
+    <script>
+        const arr=['개', '고양이', '코끼리', '원숭이', '사자', '호랑이', '토끼', '오리']
+        // for(let i=0;i<arr.length;i++){
+        //     console.log(i,arr[i])
+        //     if(i===3) break;
+        // }
+        let input = prompt(`${arr} 중 하나를 입력하시오.`)
+        // for(let i=0;i<=arr.indexOf(input);i++){
+        //     console.log(i,arr[i])
+        //     document.write(`<p>${i+1}. ${arr[i]}</p>`)
+        // }
+        for(let i=0;i<arr.length;i++){
+            if(i<=arr.indexOf(input)){
+                console.log(i,arr[i])
+                document.write(`<div><p class="a">${i+1}. ${arr[i]}</p></div>`)
+            } else {
+            console.log(i,arr[i])
+            document.write(`<p id="b">${i+1}. ${arr[i]}</p>`)
+        }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
