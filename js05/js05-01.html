@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for문 연습</title>
+    <script>
+        /* 1번 연습 */
+        // let a1 = 0
+        // for(let i = 0; i <= 20; i++){
+        //     a1 = a1 + i
+        // }
+        // console.log(`0부터 20까지 더한 수의 값은 ${a1}입니다.`)
+        // document.write(`<h1>0부터 20까지 더한 수의 값은 <mark>${a1}</mark>입니다.</h1>`)
+        
+        /* 2번 연습 */
+        // let a1 = 0
+        // let a2 = prompt('숫자를 입력하시오.','')*1
+        // for(let i = 0; i <=  a2; i++){
+        //     a1 = a1 + i
+        // }
+        // console.log(`%c0부터 ${a2}까지 더한 수의 값은 ${a1}입니다.`,"color:white; background-color:black; font-size:2rem;")
+        // document.write(`<h1>0부터 ${a2}까지 더한 수의 값은 <mark>${a1}</mark>입니다.</h1>`)
+
+        /* 3번 연습 */
+        let a1 = 0
+        let a2 = prompt('처음 숫자를 입력하시오.','')*1, i = a2
+        let a3 = prompt('끝 숫자를 입력하시오.','')*1
+        for(i; i <= a3; i++){
+            if(i%2===0){
+            a1 = a1 + i
+        }
+        }
+        console.log(`%c${a2}부터 ${a3}까지의 수에서 짝수만 더한 값은 ${a1}입니다.`,"color:white; background-color:black; font-size:2rem;")
+        document.write(`<h1>${a2}부터 ${a3}까지의 수에서 짝수만 더한 값은 <mark>${a1}</mark>입니다.</h1>`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
