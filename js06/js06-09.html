@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위 던지기</title>
+    <script>
+        let a1=a2=a3=a4=a5=a6=0, a7
+        let x = 100000
+        for(let i = 1; i <= x; i++){
+            if(Math.floor((Math.random()*6))===0){
+                a1+=1
+            }
+            if(Math.floor((Math.random()*6))===1){
+                a2+=1
+            }
+            if(Math.floor((Math.random()*6))===2){
+                a3+=1
+            }
+            if(Math.floor((Math.random()*6))===3){
+                a4+=1
+            }
+            if(Math.floor((Math.random()*6))===4){
+                a5+=1
+            }
+            if(Math.floor((Math.random()*6))===5){
+                a6+=1
+            }
+        }
+        a7 = a1+a2+a3+a4+a5+a6
+        console.log(`주사위 숫자 1이 나온 횟수 : ${a1} / 주사위 숫자 1이 나올 확률 : ${((a1/a7)*100).toFixed(2)}%`)
+        console.log(`주사위 숫자 2이 나온 횟수 : ${a2} / 주사위 숫자 2이 나올 확률 : ${((a2/a7)*100).toFixed(2)}%`)
+        console.log(`주사위 숫자 3이 나온 횟수 : ${a3} / 주사위 숫자 3이 나올 확률 : ${((a3/a7)*100).toFixed(2)}%`)
+        console.log(`주사위 숫자 4이 나온 횟수 : ${a4} / 주사위 숫자 4이 나올 확률 : ${((a4/a7)*100).toFixed(2)}%`)
+        console.log(`주사위 숫자 5이 나온 횟수 : ${a5} / 주사위 숫자 5이 나올 확률 : ${((a5/a7)*100).toFixed(2)}%`)
+        console.log(`주사위 숫자 6이 나온 횟수 : ${a6} / 주사위 숫자 6이 나올 확률 : ${((a6/a7)*100).toFixed(2)}%`)
+        console.log(a7)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보 게임</title>
+    <script>
+        let a3
+        let a4 = 0, a5 = 0, a6 = 0
+        while(true){
+            let input = prompt('가위바위보 게임입니다. 가위, 바위, 보 중 하나를 입력하시요.','')
+            let a1 = ['가위', '바위', '보']
+            let input1 = a1.indexOf(input)
+            let a2 = Math.floor(Math.random()*a1.length)
+            let result = ['승리', '무승부', '패배']
+            let win = result.indexOf('승리')
+            let draw = result.indexOf('무승부')
+            let lose = result.indexOf('패배')
+            console.log(`나의 입력 : ${input}`)
+            console.log(`컴퓨터의 출력 : ${a1[a2]}`)
+                if((input1-a2)===(-1)||(input1-a2)===(2)){
+                    console.log(`${result[lose]}입니다.`)
+                    a3 = lose
+                }
+                if((input1-a2)===0){
+                    console.log(`${result[draw]}입니다.`)
+                    a3 = draw
+                }
+                if((input1-a2)===(-2)||(input1-a2)===1){
+                    console.log(`${result[win]}입니다.`)
+                    a3 = win
+                }
+                if(a3===win){
+                    a4+=1
+                }
+                if(a3===draw){
+                    a5+=1
+                }
+                if(a3===lose){
+                    a6+=1
+                }
+                console.log(`승 : ${a4}`)
+                console.log(`무 : ${a5}`)
+                console.log(`패 : ${a6}`)
+                let a7 = (a4/(a4+a5+a6))*100
+                let a8 = a4+a5+a6
+                a9 = (a6/(a4+a5+a6))*100
+                console.log(`사용자 승률 : ${Math.round(a7)}%`)
+                console.log(`컴퓨터 승률 : ${Math.round(a9)}%`)
+            let con = confirm(`${result[a3]}하셨습니다!! 지금까지의 결과는 ${a8}전 ${a4}승 ${a5}무 ${a6}패이고, 사용자의 승률은 ${Math.round(a7)}%입니다. - 무승부는 패배로 간주합니다 - 계속하시겠습니까?`)
+            if(con===true){ 
+                input = input
+            } else {
+            break;
+            }
+        }
+        a7 = (a4/(a4+a5+a6))*100
+        a8 = a4+a5+a6
+        a9 = (a6/(a4+a5+a6))*100
+        document.write(`최종 게임결과는 ${a8}전 ${a4}승 ${a5}무 ${a6}패이고, 사용자의 승률은 ${Math.round(a7)}%입니다. <small>※ 무승부는 패배로 간주합니다.</small><br>`)
+        document.write(`최종 게임결과는 ${a8}전 ${a6}승 ${a5}무 ${a4}패이고, 컴퓨터의 승률은 ${Math.round(a9)}%입니다. <small>※ 무승부는 패배로 간주합니다.</small>`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
