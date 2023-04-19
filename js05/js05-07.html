@@ -12,11 +12,11 @@
             for(let j=5;j>i;j--){ // console, html에서 한 줄의 공백 갯수 (for문 안의 첫번째 for문) -------------> (1)번
                 output+= ' ' // output = output + ' ' -> output에 공백( )을 하나 추가 // js 영역이기 때문에 띄어쓰기로 들어감.
                 out+= `&nbsp;` // out = out + '&nbsp;' -> out에 공백(&nbsp;)을 하나 추가 // html 영역이기 때문에 &nbsp;로 들어감.
-            } // 1 - (1)번 for문 완료 후 (2)번의 for문 실행
+            } // 1 - (1)번 for문 완료 후 1 - (2)번의 for문 실행
             for(let k=0;k<2*i-1;k++){ // console, html에서 한 줄의 별 갯수 (for문 안의 두번째 for문) ----------> (2)번
                 output+='*' // output = output + '*' -> 첫번째 for ( 1-(1)번 ) 의 output(공백) 뒤에 별(*)을 하나씩 추가
-                out+= '*' // out = out + '*' -> 첫번째 for ( 1-(1)번 ) 의 output(공백) 뒤에 별(*)을 하나씩 추가
-            } // 1 - (2)번 for문 완료 후 (2)번의 for문 실행
+                out+= '*' // out = out + '*' -> 첫번째 for ( 1-(1)번 ) 의 out(공백) 뒤에 별(*)을 하나씩 추가
+            } // 1 - (2)번 for문 완료 후 나머지 실행
             output +='\n' // output = output + '\n' -> output 출력(공백+별) 뒤에 줄바꾸는 서식(\n) 추가 // js 영역이기 때문에 \n으로 들어감.
             out +=`<br>` // out = out + '<br>' -> out 출력(공백+별) 뒤에 줄바꾸는 서식(<br>) 추가 // html 영역이기 때문에 br이 들어감.
         } // 1번의 for문 완료 후 실행
@@ -24,11 +24,11 @@
             for(let j=5;j>i;j--){ // console, html에서 한 줄의 공백 갯수 (for문 안의 첫번째 for문) --------> (1)번
                 output+= ' ' // output = output + ' ' -> output에 공백( )을 하나 추가 // js 영역이기 때문에 띄어쓰기로 들어감.
                 out+= `&nbsp;` // out = out + '&nbsp;' -> out에 공백(&nbsp;)을 하나 추가 // html 영역이기 때문에 &nbsp;로 들어감.
-            } // 2 - (1)번 for문 완료 후 (2)번의 for문 실행
+            } // 2 - (1)번 for문 완료 후 2 - (2)번의 for문 실행
             for(let k=0;k<2*i-1;k++){ // console, html에서 한 줄의 별 갯수 (for문 안의 두번째 for문) ---------> (2)번
                 output+='*' // output = output + '*' -> 첫번째 for ( 2-(1)번 ) 의 output(공백) 뒤에 별(*)을 하나 추가
-                out+= '*' // out = out + '*' -> 첫번째 for ( 2-(1)번 ) 의 output(공백) 뒤에 공백(*)을 하나 추가
-            } // 2 - (2)번 for문 완료 후 (2)번의 for문 실행
+                out+= '*' // out = out + '*' -> 첫번째 for ( 2-(1)번 ) 의 out(공백) 뒤에 공백(*)을 하나 추가
+            } // 2 - (2)번 for문 완료 후 나머지 실행
             output +='\n' // output = output + '\n' -> output 출력(공백+별) 뒤에 줄바꾸는 서식(\n) 추가 // js 영역이기 때문에 \n으로 들어감.
             out +=`<br>` // out = out + '<br>' -> out 출력(공백+별) 뒤에 줄바꾸는 서식(<br>) 추가 // html 영역이기 때문에 br이 들어감.
         } // 2번 for문 완료 후 console 및 html 영역에 출력
