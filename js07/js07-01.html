@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위</title>
+    <script>
+        // let dice1 = dice2 = dice3 = dice4 = dice5 = dice6 = 0
+        const dice = [0,0,0,0,0,0,0]
+        const dice1 = [0,0,0,0,0,0,0]
+        let input = prompt('확률을 정할 숫자를 입력하시오.')*1
+        let input1 = prompt('정해진 숫자의 확률을 입력하시오.')*1
+        const ca = 100000
+        const cb = ca-((input1/100)*ca)
+        for(let i=0;i<cb;i++){
+            let array = new Uint8Array(2);
+            crypto.getRandomValues(array);
+            let ran = array[1]%6+1
+            while(true){
+                if(input===ran){
+                    array = new Uint8Array(2);
+                    crypto.getRandomValues(array);
+                    ran = array[1]%6+1
+                } else {
+                    break;
+                }
+            }
+            dice[ran-1]++
+        }
+        for(let j=0;j<dice.length-1;j++){dice[6]+=dice[j]}
+        console.log(Math.floor(dice[1]))
+        for(let k=0;k<dice.length;k++){dice1[k]+=Math.round((dice[k]/ca)*100)}
+        dice.splice(input-1,1)
+        dice1.splice(input-1,1)
+        dice.splice(input-1,0,Math.floor((input1/100)*ca))
+        dice1.splice(input-1,0,Math.floor(input1))
+        dice.splice(dice.length,0,(dice[input-1]+dice[6]))
+        dice1.splice(dice1.length,0,(dice1[input-1]+dice1[6]))
+        dice.splice(dice.length-2,1)
+        dice1.splice(dice1.length-2,1)
+        console.log(dice)
+        console.log(dice1)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

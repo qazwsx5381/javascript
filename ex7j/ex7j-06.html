@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온도구하기</title>
+    <script>
+        let cel = prompt('온도를 입력하세요')*1
+        let a1=a2=a3=a4=a5=a6=''
+        if(cel<16){
+            a1 = '쌀쌀하네요.'
+            a6 = a1
+        } else if(cel>=16&&cel<22){
+            a2 = '시원하네요.'
+            a6 = a2
+        } else if(cel>=22&&cel<28){
+            a3 = '보통이네요.'
+            a6 = a3
+        } else if(cel>=28&&cel<32){
+            a4 = '덥네요.'
+            a6 = a4
+        } else if(cel>=23){
+            a5 = '쪄죽겠어요.'
+            a6 = a5
+        }
+        let list = ''
+            list += `<table>`
+            list += `<tr><td colspan='6'>16℃ 미만</td><td colspan='4'>16℃ 이상~22℃ 미만</td><td colspan='4'>22℃ 이상~28℃ 미만</td><td colspan='3'>28℃ 이상~32℃ 미만</td><td colspan='6'>32℃ 이상</td></tr>`
+            list += `<tr><td class="a"></td><td class="a"></td><td class="a"></td><td class="a"></td><td class="a"></td><td class="a"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="d"></td><td class="d"></td><td class="d"></td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td></tr>`
+            list += `<tr><td colspan='6'>${a1}</td><td colspan='4'>${a2}</td><td colspan='4'>${a3}</td><td colspan='3'>${a4}</td><td colspan='6'>${a5}</td></tr>`
+            list += `</table>`
+            list += `<h1>지금 온도는 ${cel}℃ 이며, 현재 상태는 ${a6}</h1>`
+        document.write(list)
+    </script>
+    <style>
+        table{
+            display: inline-block;
+            border-collapse: collapse;
+            text-align: center;
+            box-shadow: 2px 2px 5px;
+            margin: auto;
+        }
+        td{
+            border: 1px solid black;
+            height: 50px;
+        }
+        .a,.b,.c,.d,.e{
+            width: 50px;
+        }
+        .a{
+          background-color: rgb(202, 93, 202);  
+        }
+        .b{
+          background-color: rgb(86, 86, 255);  
+        }
+        .c{
+          background-color: rgb(255, 255, 119);  
+        }
+        .d{
+          background-color: rgb(231, 202, 165);  
+        }
+        .e{
+          background-color: rgb(255, 81, 81);  
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        const dice = [0,0,0,0,0,0,0]
+        for(let i=0;i<100000;i++){
+            let array = new Uint8Array(2);
+            crypto.getRandomValues(array);
+            let ran = array[1]%6+1
+            dice[ran-1]++
+        }
+        console.log(dice)
+        const dchart = dice.splice(0,dice.length-1)
+
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['주사위 값 : 1', '주사위 값 : 2', '주사위 값 : 3', '주사위 값 : 4', '주사위 값 : 5', '주사위 값 : 6'],
+            datasets: [{
+              label: '# of Votes',
+              data: dchart,
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: false
+              }
+            }
+        }
+        });
+      </script>
+</body>
+</html>
