@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1부터 45까지의 수에서 3개의 숫자를 중복없이 출력</title>
+    <script>
+        let arr=[];
+        for(let i=0;i<6;i++){
+            let array = new Uint8Array(10);
+            crypto.getRandomValues(array);
+            let ran = array[1]%45+1
+            while(true){
+                if(arr.indexOf(ran)===-1){
+                    arr[i]=ran
+                    break;
+                } else {
+                    crypto.getRandomValues(array);
+                    ran = array[1]%45+1
+                }
+            }
+            console.log(ran)
+        }
+        console.log(arr)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

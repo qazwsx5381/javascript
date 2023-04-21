@@ -7,49 +7,76 @@
     <title>온도구하기</title>
     <script>
         let cel = prompt('온도를 입력하세요')*1
-        let a1=a2=a3=a4=a5=a6=''
-        if(cel<16){
-            a1 = '정상온도를 벗어났습니다.'
-            a6 = a1
-        } else if(cel>=16&&cel<22){
-            a2 = '시원하네요.'
-            a6 = a2
-        } else if(cel>=22&&cel<28){
-            a3 = '보통이네요.'
-            a6 = a3
-        } else if(cel>=28&&cel<32){
-            a4 = '갑갑하네요.'
-            a6 = a4
-        } else if(cel>=23){
-            a5 = '정상온도를 벗어났습니다.'
-            a6 = a5
+        let arr = [16,22,28,32]
+        let arr1 = ['정상온도를 벗어났습니다.','시원하네요.','보통이네요.','갑갑하네요.']
+        let a1=a2=a3=a4=a5=a6=a7=''
+        if(cel<arr[0]){
+            a1 = `<td colspan='6' class="a_1">${arr1[0]}</td>`
+            a6 = arr1[0]
+        } else if(cel<arr[1]){
+            a2 = `<td colspan='4' class="b_1">${arr1[1]}</td>`
+            a6 = arr1[1]
+        } else if(cel<arr[2]){
+            a3 = `<td colspan='4' class="c_1">${arr1[2]}</td>`
+            a6 = arr1[2]
+        } else if(cel<arr[3]){
+            a4 = `<td colspan='3' class="d_1">${arr1[3]}</td>`
+            a6 = arr1[3]
+        } else if(cel>=arr[3]){
+            a5 = `<td colspan='6' class="e_1">${arr1[0]}</td>`
+            a6 = arr1[0]
+        }
+        if(cel>=arr[0]){
+            a1 = `<td colspan='6'>${a1}</td>`
+        }
+        if(cel>=arr[1]||cel<arr[0]){
+            a2 = `<td colspan='4'>${a2}</td>`
+        }
+        if(cel>=arr[2]||cel<arr[1]){
+            a3 = `<td colspan='4'>${a3}</td>`
+        }
+        if(cel>=arr[3]||cel<arr[2]){
+            a4 = `<td colspan='3'>${a4}</td>`
+        }
+        if(cel<arr[3]){
+            a5 = `<td colspan='6'>${a5}</td>`
+        }
+        if((cel*1.8+32)%1===0){
+            a7 = cel*1.8+32
+        } else {
+            a7 = (cel*1.8+32).toFixed(2)
         }
         let list = ''
             list += `<table>`
             list += `<tr><td colspan='6'>16℃ 미만</td><td colspan='4'>16℃ 이상~22℃ 미만</td><td colspan='4'>22℃ 이상~28℃ 미만</td><td colspan='3'>28℃ 이상~32℃ 미만</td><td colspan='6'>32℃ 이상</td></tr>`
             list += `<tr><td class="a"></td><td class="a"></td><td class="a"></td><td class="a"></td><td class="a"></td><td class="a"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="b"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="d"></td><td class="d"></td><td class="d"></td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td></tr>`
-            list += `<tr><td colspan='6'>${a1}</td><td colspan='4'>${a2}</td><td colspan='4'>${a3}</td><td colspan='3'>${a4}</td><td colspan='6'>${a5}</td></tr>`
+            list += `<tr>${a1}${a2}${a3}${a4}${a5}</tr>`
+            //list += `<tr><td colspan='6'>${a1}</td><td colspan='4'>${a2}</td><td colspan='4'>${a3}</td><td colspan='3'>${a4}</td><td colspan='6'>${a5}</td></tr>`
             list += `</table>`
-            list += `<h1>지금 온도는 ${cel}℃ 이며, 현재 상태는 ${a6}</h1>`
+            list += `<h1>지금 온도는 ${cel}℃ (${a7}℉) 이며, 현재 상태는 ${a6}</h1>`
         document.write(list)
     </script>
     <style>
         table{
-            display: inline-block;
             border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
             text-align: center;
             box-shadow: 2px 2px 5px;
-            margin: auto;
+            font-size: 13px;
         }
         td{
             border: 1px solid black;
-            height: 50px;
+            height: 45px;
+        }
+        h1 {
+            text-align: center;
         }
         .a,.b,.c,.d,.e{
-            width: 50px;
+            width: 45px;
         }
         .a{
-          background-color: rgb(202, 93, 202);  
+          background-color: rgb(202, 93, 202); 
         }
         .b{
           background-color: rgb(86, 86, 255);  
@@ -62,6 +89,26 @@
         }
         .e{
           background-color: rgb(255, 81, 81);  
+        }
+        .a_1{
+          background-color: rgb(202, 93, 202); 
+          color: white;
+        }
+        .b_1{
+          background-color: rgb(86, 86, 255); 
+          color: white;
+        }
+        .c_1{
+          background-color: rgb(255, 255, 119);  
+          color: black;
+        }
+        .d_1{
+          background-color: rgb(231, 202, 165);  
+          color: black;
+        }
+        .e_1{
+          background-color: rgb(255, 81, 81);
+          color: white;  
         }
     </style>
 </head>

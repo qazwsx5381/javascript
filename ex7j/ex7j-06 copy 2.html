@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온도구하기</title>
+    <script>
+        let cel = prompt('온도를 입력하세요')*1
+        let arr = [16,22,28,32]
+        let arr1 = ['정상온도를 벗어났습니다.','시원하네요.','보통이네요.','갑갑하네요.']
+        let a1=a2=a3=a4=a5=a6=a7=''
+        if(cel<arr[0]){
+            a1 = `<td class="a_1">${arr1[0]}</td>`
+            a6 = arr1[0]
+        } else if(cel<arr[1]){
+            a2 = `<td class="b_1">${arr1[1]}</td>`
+            a6 = arr1[1]
+        } else if(cel<arr[2]){
+            a3 = `<td class="c_1">${arr1[2]}</td>`
+            a6 = arr1[2]
+        } else if(cel<arr[3]){
+            a4 = `<td class="d_1">${arr1[3]}</td>`
+            a6 = arr1[3]
+        } else if(cel>=arr[3]){
+            a5 = `<td class="e_1">${arr1[0]}</td>`
+            a6 = arr1[0]
+        }
+        if(cel>=arr[0]){
+            a1 = `<td>${a1}</td>`
+        }
+        if(cel>=arr[1]||cel<arr[0]){
+            a2 = `<td>${a2}</td>`
+        }
+        if(cel>=arr[2]||cel<arr[1]){
+            a3 = `<td>${a3}</td>`
+        }
+        if(cel>=arr[3]||cel<arr[2]){
+            a4 = `<td>${a4}</td>`
+        }
+        if(cel<arr[3]){
+            a5 = `<td>${a5}</td>`
+        }
+        if((cel*1.8+32)%1===0){
+            a7 = cel*1.8+32
+        } else {
+            a7 = (cel*1.8+32).toFixed(2)
+        }
+        let list = ''
+            list += `<table>`
+            list += `<tr><td>16℃ 미만</td><td>16℃ 이상~22℃ 미만</td><td>22℃ 이상~28℃ 미만</td><td>28℃ 이상~32℃ 미만</td><td>32℃ 이상</td></tr>`
+            list += `<tr><td colspan='5' class="f"></td></tr>`
+            list += `<tr>${a1}${a2}${a3}${a4}${a5}</tr>`
+            list += `</table>`
+        document.write(list)
+    </script>
+    <style>
+        table{
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-size: 16px;
+        }
+        td{
+            border: 1px solid black;
+            height: 45px;
+            width: 200px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .f{
+            background: linear-gradient( to right, rgb(202, 93, 202), rgb(86, 86, 255), rgb(255, 255, 119), rgb(231, 202, 165), rgb(255, 81, 81));
+        }
+        .a_1{
+            border: 3px dashed rgb(0, 0, 0);
+            background-color: rgb(202, 93, 202); 
+            color: white;
+        }
+        .b_1{
+            border: 3px dashed rgb(0, 0, 0);
+            background-color: rgb(86, 86, 255); 
+            color: white;
+        }
+        .c_1{
+            border: 3px dashed rgb(0, 0, 0);
+            background-color: rgb(255, 255, 119);  
+            color: black;
+        }
+        .d_1{
+            border: 3px dashed rgb(0, 0, 0);
+            background-color: rgb(231, 202, 165);  
+            color: black;
+        }
+        .e_1{
+            border: 3px dashed rgb(0, 0, 0);
+            background-color: rgb(255, 81, 81);
+            color: white;  
+        }
+        
+    </style>
+    <script src="test.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="glitched">Glitch</h1>
+    </header>
+    <a class="inspiration-button" href="http://www.theverge.com/a/luka-artificial-intelligence-memorial-roman-mazurenko-bot" target="_blank">Inspiration</a>
+    </script>
+</svg>
+</body>
+</html>

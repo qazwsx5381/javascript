@@ -4,31 +4,132 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>1부터 45까지의 수에서 3개를 랜덤으로 출력하고 오름차순으로 정렬</title>
     <script>
         const arr = []
-        // for(let i=0;i<3;i++){
-        //     let array = new Uint8Array(10);
-        //     crypto.getRandomValues(array);
-        //     let ran = array[1]%45+1
-        //     console.log(ran)
-        //     arr[i]=ran
-        // }
-        // let arr=[];
-        for(let i=0;i<6;i++){
+        let ran = 0
+        for(let i=0;i<3;i++){
             let array = new Uint8Array(10);
             crypto.getRandomValues(array);
             let ran = array[1]%45+1
-            while(true){
-                if(arr.indexOf(ran)===-1){
-                    arr[i]=ran
-                    break;
-                } else {
-                    crypto.getRandomValues(array);
-                    ran = array[1]%45+1
-                }
+            arr[i]=ran
+        }
+        console.log(arr)
+        let a1=arr[0], a2=arr[1], a3=arr[2]
+        console.log(arr)
+        //=====================================================
+        // 내가 만든 첫번째 방법(모든 경우의 수를 if로 만듬)
+        // if(a1<a2) {
+        //     if(a3<a1) {
+        //         arr.push(a3)
+        //         arr.push(a1)
+        //         arr.push(a2)
+        //     }
+        // } else if(a2<a1) {
+        //     if(a3<a2) {
+        //         arr.push(a3)
+        //         arr.push(a2)
+        //         arr.push(a1)
+        //     }
+        // }
+        // if(a1<a3) {
+        //     if(a2<a1) {
+        //         arr.push(a2)
+        //         arr.push(a1)
+        //         arr.push(a3)
+        //     }
+        // } else if(a3<a1) {
+        //     if(a2<a3) {
+        //         arr.push(a2)
+        //         arr.push(a3)
+        //         arr.push(a1)
+        //     }
+        // }
+        // if(a2<a3) {
+        //     if(a1<a2) {
+        //         arr.push(a1)
+        //         arr.push(a2)
+        //         arr.push(a3)
+        //     }
+        // } else if(a3<a2) {
+        //     if(a1<a3) {
+        //         arr.push(a1)
+        //         arr.push(a3)
+        //         arr.push(a2)
+        //     }
+        // }
+        // if(a1===a2) {
+        //     if(a1<a3) {
+        //         arr.push(a1)
+        //         arr.push(a2)
+        //         arr.push(a3)
+        //     } else if(a3<a1) {
+        //         arr.push(a3)
+        //         arr.push(a1)
+        //         arr.push(a2)
+        //     }
+        // }
+        // if(a2===a3) {
+        //     if(a2<a1) {
+        //         arr.push(a2)
+        //         arr.push(a3)
+        //         arr.push(a1)
+        //     } else if(a1<a2) {
+        //         arr.push(a1)
+        //         arr.push(a2)
+        //         arr.push(a3)
+        //     }
+        // }
+        // if(a3===a1) {
+        //     if(a3<a2) {
+        //         arr.push(a1)
+        //         arr.push(a3)
+        //         arr.push(a2)
+        //     } else if(a2<a3) {
+        //         arr.push(a2)
+        //         arr.push(a1)
+        //         arr.push(a3)
+        //     }
+        // }
+        // if(a1===a2===a3) {
+        //     arr.push(a1)
+        //     arr.push(a2)
+        //     arr.push(a3)
+        // }
+        // console.log(arr)
+        // arr.splice(0,3)
+        // console.log(arr)
+        //=========================================================
+        // 내가 만든 2번째 방법(모든 경우의 수를 정리하여 if로 만듬)
+        // if(a3<a2&&a1<=a3){
+        //     [arr[0],arr[1],arr[2]] = [arr[0],arr[2],arr[1]]
+        // }
+        // if(a1<a3&&a2<=a1){
+        //     [arr[0],arr[1],arr[2]] = [arr[1],arr[0],arr[2]]
+        // }
+        // if(a2<a3&&a3<=a1){
+        //     [arr[0],arr[1],arr[2]] = [arr[1],arr[2],arr[0]]
+        // }
+        // if(a3<a1&&a1<=a2){
+        //     [arr[0],arr[1],arr[2]] = [arr[2],arr[0],arr[1]]
+        // }
+        // if(a2<a1&&a3<=a2){
+        //     [arr[0],arr[1],arr[2]] = [arr[2],arr[1],arr[0]]
+        // }
+        // console.log(arr)
+        //=============================================================
+        // 선생님이 만든 방법(배열에 있는 0번째, 1번째, 2번째 수를 계속 비교하여 원하는 조건이 될 때 배열로 출력)
+        while(true){
+            if(arr[0]<=arr[1]&&arr[1]<=arr[2])break
+            if(arr[0]>arr[1]){
+                [arr[0],arr[1],arr[2]] = [arr[1],arr[0],arr[2]]
             }
-            console.log(ran)
+            if(arr[1]>arr[2]){
+                [arr[0],arr[1],arr[2]] = [arr[0],arr[2],arr[1]]
+                /* temp = arr[0]
+                   arr[0] = arr[1] 
+                   arr[1] = temp*/
+            }
         }
         console.log(arr)
     </script>
