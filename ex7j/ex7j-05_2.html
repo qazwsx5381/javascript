@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1부터 45까지의 수에서 3개의 숫자를 중복없이 오름차순으로 출력</title>
+    <title>1부터 45까지의 수에서 4개의 숫자를 중복없이 오름차순으로 출력</title>
     <script>
         let arr=[];
-        for(let i=0;i<3;i++){
+        for(let i=0;i<4;i++){
             let array = new Uint8Array(10);
             crypto.getRandomValues(array);
             let ran = array[1]%45+1
@@ -23,16 +23,18 @@
             console.log(ran)
         }
         while(true){
-        if(arr[0]<arr[1]&&arr[1]<arr[2])break
+        if(arr[0]<arr[1]&&arr[1]<arr[2]&&arr[2]<arr[3])break
         if(arr[0]>arr[1]){
-            [arr[0],arr[1],arr[2]] = [arr[1],arr[0],arr[2]]
+            [arr[0],arr[1],arr[2],arr[3]] = [arr[1],arr[0],arr[2],arr[3]]
         }
         if(arr[1]>arr[2]){
-            [arr[0],arr[1],arr[2]] = [arr[0],arr[2],arr[1]]
+            [arr[0],arr[1],arr[2],arr[3]] = [arr[0],arr[2],arr[1],arr[3]]
+        }
+        if(arr[2]>arr[3]){
+            [arr[0],arr[1],arr[2],arr[3]] = [arr[0],arr[1],arr[3],arr[2]]
         }
         }
         console.log(arr)
-        
     </script>
 </head>
 <body>

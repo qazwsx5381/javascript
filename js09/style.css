@@ -1,0 +1,16 @@
+table{
+    margin: auto;
+    margin-top: 3rem;
+    border-collapse: collapse;
+    text-align: center;
+    box-shadow: 2px 2px 5px;
+}
+th{
+    background-color: #17f5172f;
+}
+th, td {
+    border: 1px solid black;
+    width: 130px;
+    height: 40px;
+    font-size: 20px;
+}

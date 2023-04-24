@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 중복제거</title>
+    <script>
+        let arr = []
+        let arr1 = new Array(45).fill(0)
+        let total = 0
+        function lotto(){
+            arr = []
+            for(let i=0;i<6;i++){
+                let ran = Math.floor(Math.random()*45+1)
+                while(true){
+                if(arr.indexOf(ran)===-1){
+                    arr[i]=ran
+                    break;
+                } else {
+                    ran = Math.floor(Math.random()*45+1)
+                }
+            }
+        }
+        console.log(arr.sort((a,b)=>a-b))
+        }
+        for(let i=0;i<10000;i++){
+            lotto()
+            for(let j=0;j<6;j++){
+                for(let k=0;k<45;k++){
+                    if(arr[j]===k+1){
+                        arr1[k]+=1
+                        total += 1
+                    }
+                }  
+            }   
+        }
+        console.log(arr1)
+    let list = ''
+        list += `<table>`
+        list += `<tr><th colspan="4">로또 숫자</th><th colspan="2">추첨횟수 : 10000</th></tr>`
+        list += `<tr><th>추첨번호 : 1</th><td>${arr1[0]}</td><th>추첨번호 : 16</th><td>${arr1[15]}</td><th>추첨번호 : 31</th><td>${arr1[30]}</td></tr>`
+        list += `<tr><th>추첨번호 : 2</th><td>${arr1[1]}</td><th>추첨번호 : 17</th><td>${arr1[16]}</td><th>추첨번호 : 32</th><td>${arr1[31]}</td></tr>`
+        list += `<tr><th>추첨번호 : 3</th><td>${arr1[2]}</td><th>추첨번호 : 18</th><td>${arr1[17]}</td><th>추첨번호 : 33</th><td>${arr1[32]}</td></tr>`
+        list += `<tr><th>추첨번호 : 4</th><td>${arr1[3]}</td><th>추첨번호 : 19</th><td>${arr1[18]}</td><th>추첨번호 : 34</th><td>${arr1[33]}</td></tr>`
+        list += `<tr><th>추첨번호 : 5</th><td>${arr1[4]}</td><th>추첨번호 : 20</th><td>${arr1[19]}</td><th>추첨번호 : 35</th><td>${arr1[34]}</td></tr>`
+        list += `<tr><th>추첨번호 : 6</th><td>${arr1[5]}</td><th>추첨번호 : 21</th><td>${arr1[20]}</td><th>추첨번호 : 36</th><td>${arr1[35]}</td></tr>`
+        list += `<tr><th>추첨번호 : 7</th><td>${arr1[6]}</td><th>추첨번호 : 22</th><td>${arr1[21]}</td><th>추첨번호 : 37</th><td>${arr1[36]}</td></tr>`
+        list += `<tr><th>추첨번호 : 8</th><td>${arr1[7]}</td><th>추첨번호 : 23</th><td>${arr1[22]}</td><th>추첨번호 : 38</th><td>${arr1[37]}</td></tr>`
+        list += `<tr><th>추첨번호 : 9</th><td>${arr1[8]}</td><th>추첨번호 : 24</th><td>${arr1[23]}</td><th>추첨번호 : 39</th><td>${arr1[38]}</td></tr>`
+        list += `<tr><th>추첨번호 : 10</th><td>${arr1[9]}</td><th>추첨번호 : 25</th><td>${arr1[24]}</td><th>추첨번호 : 40</th><td>${arr1[39]}</td></tr>`
+        list += `<tr><th>추첨번호 : 11</th><td>${arr1[10]}</td><th>추첨번호 : 26</th><td>${arr1[25]}</td><th>추첨번호 : 41</th><td>${arr1[40]}</td></tr>`
+        list += `<tr><th>추첨번호 : 12</th><td>${arr1[11]}</td><th>추첨번호 : 27</th><td>${arr1[26]}</td><th>추첨번호 : 42</th><td>${arr1[41]}</td></tr>`
+        list += `<tr><th>추첨번호 : 13</th><td>${arr1[12]}</td><th>추첨번호 : 28</th><td>${arr1[27]}</td><th>추첨번호 : 43</th><td>${arr1[42]}</td></tr>`
+        list += `<tr><th>추첨번호 : 14</th><td>${arr1[13]}</td><th>추첨번호 : 29</th><td>${arr1[28]}</td><th>추첨번호 : 44</th><td>${arr1[43]}</td></tr>`
+        list += `<tr><th>추첨번호 : 15</th><td>${arr1[14]}</td><th>추첨번호 : 30</th><td>${arr1[29]}</td><th>추첨번호 : 45</th><td>${arr1[44]}</td></tr>`
+        list += `<tr><th colspan="4"></th><th colspan="2">합계 : ${total}</th></tr>`
+        list += `</table>`
+    document.write(list)
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+</body>
+</html>

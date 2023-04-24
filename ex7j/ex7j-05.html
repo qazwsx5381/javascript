@@ -7,14 +7,12 @@
     <title>1부터 45까지의 수에서 3개를 랜덤으로 출력하고 오름차순으로 정렬</title>
     <script>
         const arr = []
-        let ran = 0
         for(let i=0;i<3;i++){
             let array = new Uint8Array(10);
             crypto.getRandomValues(array);
             let ran = array[1]%45+1
             arr[i]=ran
         }
-        console.log(arr)
         let a1=arr[0], a2=arr[1], a3=arr[2]
         console.log(arr)
         //=====================================================
