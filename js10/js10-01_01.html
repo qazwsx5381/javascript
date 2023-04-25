@@ -10,6 +10,7 @@
         let arr = []
         let arr1 = new Array(45).fill(0)
         let total = 0
+        let input = prompt('몇 개의 로또를 뽑을 것인지 알려주세요','숫자만 입력!')*1
         function lotto(){
             arr = []
             for(let i=0;i<6;i++){
@@ -25,7 +26,7 @@
         }
         console.log(arr.sort((a,b)=>a-b))
         }
-        for(let i=0;i<10000;i++){
+        for(let i=0;i<input;i++){
             lotto()
             for(let j=0;j<6;j++){
                 for(let k=0;k<45;k++){
@@ -37,17 +38,35 @@
             }   
         }
         console.log(arr1)
-    // let list = ''
-    //     list += `<table class="charts-css bar show-labels data-spacing-10">`
-    //     list += `<tr><th scope="row" colspan="4">로또 숫자</th><th scope="row" colspan="2">추첨횟수 : 10000</th></tr>`
-    //     for(let i=0;i<15;i++){
-    //         list += `<tr><td>추첨번호 : ${i+1}</td><td>${arr1[i]}</td><td>추첨번호 : ${i+16}</td><td>${arr1[i+15]}</td><td>추첨번호 : ${i+31}</td><td>${arr1[i+30]}</td></tr>`
-    //     }
-    //     list += `<tr><th colspan="4"></th><th colspan="2">합계 : ${total}</th></tr>`
-    //     list += `</table>`
-    // document.write(list)
+        let list = ''
+            list += `<table>`
+            list += `<tr><th colspan="4">로또 숫자</th><th colspan="2">추첨횟수 : ${input}</th></tr>`
+            for(let i=0;i<15;i++){
+                list += `<tr><td>추첨번호 : ${i+1}</td><td>${arr1[i]}</td><td>추첨번호 : ${i+16}</td><td>${arr1[i+15]}</td><td>추첨번호 : ${i+31}</td><td>${arr1[i+30]}</td></tr>`
+            }
+            list += `<tr><th colspan="4"></th><th colspan="2">합계 : ${total}</th></tr>`
+            list += `</table>`
+        document.write(list)
     </script>
-    <link rel="stylesheet" href="style.css">
+    <style>
+    table{
+        margin: 3rem;
+        border-collapse: collapse;
+        text-align: center;
+        box-shadow: 2px 2px 5px;
+        display: inline-table;
+    }
+    th{
+        background-color: #17f5172f;
+    }
+    th, td {
+        width: 150px;
+        height: 25px;
+        border: 1px solid black;
+        height: 40px;
+        font-size: 20px;
+    }
+    </style>
 </head>
 <body>
     <div>
@@ -63,9 +82,9 @@
       data: {
         labels: ['1', '2', '3', '4', '5', '6','7', '8', '9', '10', '11', '12','13', '14', '15', '16', '17', '18','19', '20', '21', '22', '23', '24','25', '26', '27', '28', '29', '30','31', '32', '33', '34', '35', '36','37', '38', '39', '40', '41', '42','43', '44', '45'],
         datasets: [{
-          label: 'lotto of Votes',
+          label: 'lotto Number of Votes',
           data: dchart,
-          borderWidth: 0.5
+          borderWidth: 1
         }]
       },
       options: {

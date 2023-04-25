@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단의 2단~4단까지 버튼만들기</title>
+    <link rel="stylesheet" href="10j05.css">
+    <script>
+        function a2(){
+            document.close()
+            document.write(`<button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a2()">2단</button> <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a3()">3단</button> <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a4()">4단</button><br>`)
+            let c2 = 2
+            let list = ''
+                list += `<table style="border-collapse: collapse; display:inline-block; margin:10px 0 0 0; text-align:center;">`
+                list += `<tr><th style="border:1px solid black;  width:100px;">2단</th></tr>`
+                for(let i=1;i<10;i++){
+                    list += `<tr><td style="border:1px solid black;">${c2} X ${i} = ${c2*i}</td></tr>`
+                }
+                list += `</table>`
+            document.write(list)
+        }
+        function a3(){
+            document.close()
+            document.write(`<button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a2()">2단</button> <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a3()">3단</button> <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a4()">4단</button><br>`)
+            let c3 = 3
+            let list = ''
+                list += `<table style="border-collapse: collapse; display:inline-block; margin:10px 0 0 0; text-align:center;">`
+                list += `<tr><th style="border:1px solid black; width:100px;">3단</th></tr>`
+                for(let i=1;i<10;i++){
+                    list += `<tr><td style="border:1px solid black;">${c3} X ${i} = ${c3*i}</td></tr>`
+                }
+                list += `</table>`
+            document.write(list)
+        }
+        function a4(){
+            document.close()
+            document.write(`<button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a2()">2단</button> <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a3()">3단</button> <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a4()">4단</button><br>`)
+            let c4 = 4
+            let list = ''
+                list += `<table style="border-collapse: collapse; display:inline-block; margin:10px 0 0 0; text-align:center;">`
+                list += `<tr><th style="border:1px solid black; width:100px;">4단</th></tr>`
+                for(let i=1;i<10;i++){
+                    list += `<tr><td style="border:1px solid black;">${c4} X ${i} = ${c4*i}</td></tr>`
+                }
+                list += `</table>`
+            document.write(list)
+        }
+    </script>
+</head>
+<body>
+    <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a2()">2단</button>
+    <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a3()">3단</button>
+    <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a4()">4단</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <script>
+        let input = Math.floor(prompt('강조하고 싶은 단을 입력하시오.')*1)
+        for(let i=2;i<10;i++){
+            let list = ''
+            if(input===i) list += `<table class="a">`
+            else list += `<table class="b">`
+            list += `<tr><th>${i}단</th></tr>`
+            for(let k=1;k<10;k++) list += `<tr><td>${i} X ${k} = ${i*k}</td></tr>`
+            list += `</table>`
+            document.write(list)
+            }
+    </script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

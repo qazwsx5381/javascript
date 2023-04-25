@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function b1(){alert('function pop up 1')}
+        function b2(){alert('function pop up 2')}
+    </script>
+    <style>
+        div{
+            background-color: bisque;
+            display: inline;
+        }
+        div:hover{
+            background-color: aquamarine;
+        }
+        span{
+            background-color: aquamarine;
+        }
+        span:hover{
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <div onclick="b1()">버튼1입니다.</div>
+    <span onclick="b2()">버튼2입니다.</span>
+    <div onclick="alert('팝업입니다.')">팝업띄우기</div>
+</body>
+</html>

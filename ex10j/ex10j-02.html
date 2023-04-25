@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 번호 추첨</title>
+    <script>
+        let arr = []
+        function b1(){
+            arr = []
+            while(arr.length<6){
+                const ran = Math.floor(Math.random()*45+1)
+                if(!arr.includes(ran))arr.push(ran)
+            }
+            document.write(`<button onclick="b1()">로또 번호 추첨</button> <button onclick="b2()">정렬</button><br>`)
+            document.write(arr)
+        }
+        function b2(){
+            arr.sort((a,b)=>a-b)
+            //document.write(`<button onclick="b1()">로또 번호 추첨</button> <button onclick="b2()">정렬</button>`)
+            document.write('<h1>오름차순으로 정렬하였습니다.</h1>')
+            document.write(`<h1>${arr}</h1>`)
+        }
+    </script>
+</head>
+<body>
+    <button type="menu" onclick="b1()">로또 번호 추첨</button>
+    <button onclick="b2()">정렬</button>
+</body>
+</html>

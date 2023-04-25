@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+    <style>
+        #my-chart.bar {
+            max-width: 300px;
+            margin: 0 auto;
+            height: 200px;
+        }
+        #my-chart {
+            --color: rgba(145, 240, 253, 0.377);
+        }
+        .legend
+        {
+            grid-template-columns: 100px 1fr;
+        }
+        #tooltips-example {
+  /* Custom chart size */
+  height: 300px;
+  max-width: 600px;
+  margin: 0 auto;
+
+  /* Custom colors */
+  --color-1: #FEE101;
+  --color-2: #D7D7D7;
+  --color-3: #A77044;
+}
+    </style>
+</head>
+<body>
+    <!-- <div id="my-chart">
+        <ul class="charts-css legend legend-circle">
+            <li>금메달</li>
+            <li>은메달</li>
+            <li>동메달</li>
+        </ul>
+        <table class="charts-css bar show-labels data-spacing-10 datasets-spacing-20 show-primary-axis">
+            <caption> 2016 Summer Olympics Medal Table </caption>
+            <thead>
+            <tr>
+                <th scope="col"> Country </th>
+                <th scope="col"> Gold </th>
+                <th scope="col"> Silver </th>
+                <th scope="col"> Bronze </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row"> USA </th>
+                <td style="--size:0.92"><span class="data">46</span><span class="tooltip"> Data: 10 <br> More info... </span></td>
+                <td style="--size:0.74"><span class="data">37</span><span class="tooltip"> Data: 10 <br> More info... </span></td>
+                <td style="--size:0.76"><span class="data">38</span><span class="tooltip"> Data: 10 <br> More info... </span></td>
+            </tr>
+            <tr>
+                <th scope="row"> GBR </th>
+                <td style="--size:0.54"><span class="data">27</span><span class="tooltip"> Data: 10 <br> More info... </span></td>
+                <td style="--size:0.46"><span class="data">23</span><span class="tooltip"> Data: 10 <br> More info... </span></td>
+                <td style="--size:0.34"><span class="data">17</span><span class="tooltip"> Data: 10 <br> More info... </span></td>
+            </tr>
+            <tr>
+                <th scope="row"> CHN </th>
+                <td style="--size:0.52"><span class="data">26</span><span class="tooltip"> Data: 10 <br> More info... </span></td>
+                <td style="--size:0.38"><span class="data">18</span><span class="tooltip"> Data: 10 <br> More info... </span></td>
+                <td style="--size:0.52"><span class="data">26</span><span class="tooltip"> Data: 10 <br> More info... </span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div> -->
+    <table class="charts-css column multiple show-labels show-primary-axis data-spacing-20" id="tooltips-example">
+
+        <caption> 2016 Summer Olympics Medal Table </caption>
+      
+        <thead>
+          <tr>
+            <th scope="col"> Country </th>
+            <th scope="col"> Gold </th>
+            <th scope="col"> Silver </th>
+            <th scope="col"> Bronze </th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <tr>
+            <th scope="row"> USA </th>
+            <td style="--size: calc( 46 / 50 );">
+              <span class="data"> 46 <br> 🥇 </span>
+              <span class="tooltip"> United States took <br> home 46 gold medals </span>
+            </td>
+            <td style="--size: calc( 37 / 50 );">
+              <span class="data"> 37 <br> 🥈 </span>
+              <span class="tooltip"> United States took <br> home 37 silver medals </span>
+            </td>
+            <td style="--size: calc( 38 / 50 );">
+              <span class="data"> 38 <br> 🥉 </span>
+              <span class="tooltip"> United States took <br> home 38 bronze medals </span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"> GBR </th>
+            <td style="--size: calc( 27 / 50 );">
+              <span class="data"> 27 </span>
+              <span class="tooltip"> Great Britain took <br> home 27 gold medals </span>
+            </td>
+            <td style="--size: calc( 23 / 50 );">
+              <span class="data"> 23 </span>
+              <span class="tooltip"> Great Britain took <br> home 23 silver medals </span>
+            </td>
+            <td style="--size: calc( 17 / 50 );">
+              <span class="data"> 17 </span>
+              <span class="tooltip"> Great Britain took <br> home 17 bronze medals </span>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"> CHN </th>
+            <td style="--size: calc( 26 / 50 );">
+              <span class="data"> 26 </span>
+              <span class="tooltip"> China took home <br> 26 gold medals </span>
+            </td>
+            <td style="--size: calc( 18 / 50 );">
+              <span class="data"> 18 </span>
+              <span class="tooltip"> China took home <br> 18 silver medals </span>
+            </td>
+            <td style="--size: calc( 26 / 50 );">
+              <span class="data"> 26 </span>
+              <span class="tooltip"> China took home <br> 26 bronze medals </span>
+            </td>
+          </tr>
+        </tbody>
+      
+      </table>
+</body>
+</html>

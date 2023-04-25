@@ -14,3 +14,14 @@ th, td {
     height: 40px;
     font-size: 20px;
 }
+#my-chart.bar {
+    --labels-size: 50px;
+}
+#animations-example-2 th {
+    animation: spin-labels 3s linear infinite;
+  }
+  @keyframes spin-labels {
+    0%   { transform: rotateX(   0deg ); }
+    40%  { transform: rotateX( 360deg ); }
+    100% { transform: rotateX( 360deg ); }
+  }

@@ -1,0 +1,62 @@
+table{
+    margin: 3rem;
+    border-collapse: collapse;
+    text-align: center;
+    box-shadow: 2px 2px 5px;
+    display: inline-table;
+}
+th{
+    background-color: #17f5172f;
+}
+th, td {
+    border: 1px solid black;
+    height: 40px;
+    font-size: 20px;
+}
+.a{
+    /* transition: 3s; */
+    /* transform: scale(1.2); */
+    background-color: #3df9ff31;
+    animation: ani 1.5s infinite linear;
+    animation-delay: 2s;
+}
+.b{
+    animation: fadein 2s;
+}
+
+@keyframes ani {
+    50% {
+        transform: scaleY(1.1);
+    }
+
+    100% {
+        transform: translateY(0px)
+    }
+}
+@keyframes fadeout {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+@keyframes fadein {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+/* #my-chart.bar {
+    --labels-size: 50px;
+}
+#animations-example-2 th {
+    animation: spin-labels 3s linear infinite;
+  }
+  @keyframes spin-labels {
+    0%   { transform: rotateX(   0deg ); }
+    40%  { transform: rotateX( 360deg ); }
+    100% { transform: rotateX( 360deg ); }
+  } */
