@@ -7,50 +7,28 @@
     <title>구구단의 2단~4단까지 버튼만들기</title>
     <link rel="stylesheet" href="10j05.css">
     <script>
-        function a2(){
-            document.close()
-            document.write(`<button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a2()">2단</button> <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a3()">3단</button> <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a4()">4단</button><br>`)
-            let c2 = 2
+        function a2(c2){
             let list = ''
                 list += `<table style="border-collapse: collapse; display:inline-block; margin:10px 0 0 0; text-align:center;">`
-                list += `<tr><th style="border:1px solid black;  width:100px;">2단</th></tr>`
+                list += `<tr><th style="border:1px solid black;  width:100px;">구구단 ${c2}단</th></tr>`
                 for(let i=1;i<10;i++){
                     list += `<tr><td style="border:1px solid black;">${c2} X ${i} = ${c2*i}</td></tr>`
                 }
                 list += `</table>`
-            document.write(list)
-        }
-        function a3(){
             document.close()
-            document.write(`<button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a2()">2단</button> <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a3()">3단</button> <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a4()">4단</button><br>`)
-            let c3 = 3
-            let list = ''
-                list += `<table style="border-collapse: collapse; display:inline-block; margin:10px 0 0 0; text-align:center;">`
-                list += `<tr><th style="border:1px solid black; width:100px;">3단</th></tr>`
-                for(let i=1;i<10;i++){
-                    list += `<tr><td style="border:1px solid black;">${c3} X ${i} = ${c3*i}</td></tr>`
-                }
-                list += `</table>`
-            document.write(list)
-        }
-        function a4(){
-            document.close()
-            document.write(`<button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a2()">2단</button> <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a3()">3단</button> <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a4()">4단</button><br>`)
-            let c4 = 4
-            let list = ''
-                list += `<table style="border-collapse: collapse; display:inline-block; margin:10px 0 0 0; text-align:center;">`
-                list += `<tr><th style="border:1px solid black; width:100px;">4단</th></tr>`
-                for(let i=1;i<10;i++){
-                    list += `<tr><td style="border:1px solid black;">${c4} X ${i} = ${c4*i}</td></tr>`
-                }
-                list += `</table>`
+            document.write(`<button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a2(2)">구구단 2단</button> <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a2(3)">구구단 3단</button> <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a2(4)">구구단 4단</button><br>`)
             document.write(list)
         }
     </script>
 </head>
 <body>
-    <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a2()">2단</button>
-    <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a3()">3단</button>
-    <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a4()">4단</button>
+    <script>
+        let list=''
+        for(i=2;i<10;i++)
+            list+=`<button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a2(2)">구구단 2단</button>`
+    </script>
+    <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a2(2)">구구단 2단</button>
+    <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a2(3)">구구단 3단</button>
+    <button style="display: inline-block; border:1px solid black;padding: 1rem 2rem;" onclick="a2(4)">구구단 4단</button>
 </body>
 </html>
