@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자의 증감</title>
+    <script>
+        let num = 0
+        function inc() {
+            num ++;
+            document.close()
+            document.write(`<div>${num}</div>`)
+            document.write(`<button onclick="inc()">증가</button> <button onclick="dec()">감소</button> <button onclick="reset()">초기화</button>`)
+        }
+        function dec() {
+            num --;
+            document.close()
+            document.write(`<div>${num}</div>`)
+            document.write(`<button onclick="inc()">증가</button> <button onclick="dec()">감소</button> <button onclick="reset()">초기화</button>`)
+        }
+        function reset() {
+            num = 0;
+            document.close()
+            document.write(`<div>${num}</div>`)
+            document.write(`<button onclick="inc()">증가</button> <button onclick="dec()">감소</button> <button onclick="reset()">초기화</button>`)
+        }
+    </script>
+</head>
+<body>
+    <script>
+        document.write(`<div>${num}</div>`)
+        document.write(`<button onclick="inc()">증가</button> <button onclick="dec()">감소</button> <button onclick="reset()">초기화</button>`)
+    </script>
+</body>
+</html>
