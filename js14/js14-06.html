@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach</title>
+    <script>
+        const array = [11,22,33,44,55,66,77]
+        const exit = []
+        // function (value, index, array){}
+        array.forEach(function(v,i,a){
+            //console.log(v,i,a)
+            console.log(v)
+            console.log(i)
+            console.log(a)
+        })
+        /* 동일한 방법 */
+        // 1. array.forEach(v=>exit.push(v))
+        /* 2.array.forEach(function(v,i){
+            exit.push(v)
+        }) */
+        array.forEach(function(v,i){
+            exit.push(v)
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
