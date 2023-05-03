@@ -8,20 +8,21 @@
     <script>
         const array = [1,2,3,4,5,6,7,8,9,10]
         let array1=[], array2=[]
-        // array.forEach(function(v,i){
-        //     if(v%2===1){
-        //         array2.push(v)
-        //     } else {
-        //         array1.push(v)  
-        //     }
-        // })
-        array.forEach(v=>{
+        array.forEach(function(v,i){
+            //if(i%2===0){
             if(v%2===1){
                 array2.push(v)
             } else {
                 array1.push(v)  
             }
         })
+        // array.forEach(v=>{
+        //     if(v%2===1){
+        //         array2.push(v)
+        //     } else {
+        //         array1.push(v)  
+        //     }
+        // })
         console.log(array)
         console.log(array1)
         console.log(array2)
