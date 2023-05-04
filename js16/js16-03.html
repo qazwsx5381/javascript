@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+    <script>
+        const arr = ['apple', 'pear', 'watermelon', 'melon', 'peach', 'strawberry', 'mango', 'banana', 'kiwi', 'grape', 'orange', 'mandarin']
+        let arr1 = arr.filter(v=>v.length>=8)
+        arr1.sort()
+        arr1.sort((a,b)=>b.length-a.length)
+        console.log(arr1)
+        let list =''
+        for(let i=0;i<arr1.length;i++)list += `<span style="border : 10px double brown; color:brown; font-size:25px; box-shadow: 5px 5px 8px; margin:0px 20px 20px 20px; display : inline-block; padding : 5px 8px">arr1[${i}] = ${arr1[i]}</span><br>`
+        document.write(list)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

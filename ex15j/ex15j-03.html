@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map 과제</title>
+    <script>
+        /* 1번 방법 */
+        // const arr = Array(200).fill(0)
+        // const arr1 = arr.map((v,i)=>{
+        //     if((i+1)%11===0){
+        //         return v=(i+1)*2
+        //     } else {
+        //         return v=i+1
+        //     }
+        // })
+        /* 2번 방법 */
+        const arr = Array(100).fill(0).map((v,i)=>v=i+1)
+        let arr1 = []
+        for(let i=0;i<200;i++){
+        if(arr[i]%11===0){
+            arr1[i]=arr[i]*2
+        } else {
+            arr1[i]=arr[i]
+        }
+        }
+        console.log(arr1)
+        // console.log(arr)
+        // console.log(`%c${arr1}`,"color:red; background-color : yellow;")
+        // document.write(`<span style="color:red; display:inline-block; word-break: break-all;">${arr1}</span>`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
