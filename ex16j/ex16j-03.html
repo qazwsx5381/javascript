@@ -6,16 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-            let ti = setInterval(()=>{
-                for(let i=0;i<1500;i++)
-                document.write(`<span style = "background-color:black; color : red; font-size : 40px; display:inline-block;">O</span>`)},1000)
-            setTimeout(()=>{
-            clearInterval(ti)
+        let i = 0
+        let ti = setInterval(()=>{
+            document.close()
+            document.write(`<div style = "background-color:red; display:inline-block; border : 1px solid red; border-radius:200px; padding :200px;"></div>`)},0.5*1000)
+        let tim = setInterval(()=>{
+            document.close()
+            document.write(`<div style = "background-color:yellow; display:inline-block; border : 1px solid yellow; border-radius:200px; padding :200px;"></div>`)
+            document.write(`<h1 style="font-size:10rem">${++i}</h1>`)},1.5*1000)
+        setTimeout(()=>{
+            clearInterval(tim)
             },15*1000)
-            // ti = setInterval(()=>{document.write(`<span style = "background-color:black; color : white; font-size : 40px; display:inline-block;">O</span>`)},500)
-            // setTimeout(()=>{
-            // clearInterval(ti)
-            // },15*1000)
+        // ti = setInterval(()=>{document.write(`<span style = "background-color:black; color : white; font-size : 40px; display:inline-block;">O</span>`)},500)
+        // setTimeout(()=>{
+        // clearInterval(ti)
+        // },15*1000)
     </script>
 </head>
 <body>
