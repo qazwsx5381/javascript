@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호이스팅3</title>
+    <!--
+    <script>
+        /*
+        글로벌변수(전역변수)
+        로컬변수(지역변수)
+
+        지역변수가 더 중요하다.
+        */
+        /*
+        // 호이스팅은 변수나 함수의 선언이 코드 최상단으로 끌어올려지는 현상
+        var name = '글로벌 변수'
+        function callName(){
+            console.log(name)
+            var name = '로컬 변수' // 호이스팅이 되어 올라간다.
+        }
+        callName()
+        console.log(name)
+    </script>
+    -->
+    <script>
+        // 선언했을 때!
+        // var name = '글로벌 변수'
+        // function callName(){
+        //     // var name  <---- 끌어올려짐!
+        //     console.log(name)
+        //     var name = '로컬 변수' // 호이스팅이 되어 올라간다.
+        // }
+        // callName()
+        // console.log(name)
+
+        // 선언 안했을 때!
+        var name = '글로벌 변수'
+        function callName(){
+            console.log(name)
+            name = '로컬 변수' // 호이스팅 안됨
+        }
+        callName()
+        console.log(name)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
