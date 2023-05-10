@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const arr = []; // undefined
+      arr.sample = 100;
+      arr.sample; // 100
+      arr; // [sample: 100]sample: 100length: 0[[Prototype]]: Array(0)
+      typeof arr; //'object'
+
+      const arr2 = [11, 22, 33]; // undefined
+      typeof arr2; // 'object'
+      Array.isArray(arr); // true
+      Array.isArray(arr2); // true
+      arr[0] = 11; // 11
+      arr[1] = 22; // 22
+      arr; // (2) [11, 22, sample: 100]
+      arr.forEach((v) => console.log(v)); //VM580:1 11, VM580:1 22
+    </script>
+  </head>
+  <body></body>
+</html>
