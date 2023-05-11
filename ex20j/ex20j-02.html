@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>알아두면 좋은 메소드</title>
+    <script>
+      let str1 = "     안 녕하세요     ";
+      console.log(str1);
+      console.log(str1.trim()); // 공백 제거(글자 전 후만 제거가능)
+
+      let str2 = "a,b,c,d,e,f,g,h";
+      let str2A = str2.split(","); // 문자를 배열로
+      console.log(str2);
+      console.log(str2A);
+
+      const str = "오늘 학교에서 시험을 아주 잘 쳤어요";
+      const str_1 = str.split(" ");
+      console.log(str_1);
+
+      const str4 = `내가 만약
+      나비라면
+      훨훨
+      날아갈텐데...
+      `;
+      const str4_1 = str4.split("\n");
+      console.log(str4_1);
+      for (i in str4_1) str4_1[i] = str4_1[i].trim();
+      console.log(str4_1);
+
+      const str4_2 = str4_1.map((i) => i.trim());
+      console.log(str4_2);
+    </script>
+  </head>
+  <body></body>
+</html>

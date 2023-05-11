@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>split 메소드</title>
+    <script>
+      let input = `
+        일자, 달러, 엔, 유로
+        02, 1141.8, 1097.46, 1262.37
+        03, 1148.7, 1111.36, 1274.65
+        04, 1140.6, 1107.81, 1266.58
+        07, 1143.4, 1099.58, 1267.8
+        08, 1141.6, 1091.97, 1261.07
+        `;
+      console.log("1번", input);
+
+      input = input.trim(); // 글자 앞 뒤의 공백제거 (글자 내의 공백은 제거되지 않음)
+
+      input = input.split("\n"); // 글자의 줄 단위로 배열 생성
+      console.log("2번", input);
+      input = input.map((x) => x.trim()); // 글자의 줄 단위로 배열 생성 후 각 배열의 앞 뒤 공백 제거
+      console.log("3번", input);
+
+      input = input.map((line) => line.split(",")); // 배열의 개체를 " , " 단위로 나누어 배열로 재배치
+      for (i in input) input[i] = input[i].map((x) => x.trim()); // 재배치한 배열 안에 각 개체의 앞 뒤 공백 제거
+      console.log("4번", input);
+
+      let input1 = JSON.stringify(input, null, 2);
+      console.log(input1); // 개체 표시!
+    </script>
+  </head>
+  <body></body>
+</html>
