@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>isNaN, isFinite 메소드</title>
+    <script>
+      const m = Number("숫자로 변환할 수 없는 경우");
+      console.log(m);
+      console.log(m === NaN);
+      console.log(Number.isNaN(m));
+
+      const n = 10 / 0;
+      console.log(n);
+
+      const o = -10 / 0;
+      console.log(o);
+
+      console.log(Number.isFinite(n));
+      console.log(Number.isFinite(o));
+      console.log(Number.isFinite(1));
+      console.log(Number.isFinite(10));
+    </script>
+  </head>
+  <body></body>
+</html>
