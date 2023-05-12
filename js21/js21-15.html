@@ -18,14 +18,14 @@
       const key = ["식사", "플레이", "스터디", "수면", "춤", "오락", "연인"];
       const obj = {};
       /* 1번 */
-      //   arr.forEach((v, i) => (obj[key[i]] = v));
-      //   console.log(obj);
-      //   console.log(JSON.stringify(obj, null, 2));
-
-      /* 2번 */
-      for (i in arr) obj[key[i]] = arr[i];
+      arr.forEach((v, i) => (obj[key[i]] = v));
       console.log(obj);
       console.log(JSON.stringify(obj, null, 2));
+
+      /* 2번 */
+      // for (i in arr) obj[key[i]] = arr[i];
+      // console.log(obj);
+      // console.log(JSON.stringify(obj, null, 2));
 
       /* 3번 */
       //   for (i = 0; i < arr.length; i++) obj[key[i]] = arr[i];
