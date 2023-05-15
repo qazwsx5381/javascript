@@ -19,15 +19,29 @@
       //     header[i].innerHTML = `<mark>${i + 1}</mark>`;
       //   }
       // });
+
+      // document.addEventListener("DOMContentLoaded", () => {
+      //   const header = document.querySelectorAll("h1");
+      //   for (let i = 0; i < header.length; i++) {
+      //     if (i % 2 === 0) {
+      //       header[i].innerHTML = `<mark style = "color : blue">${
+      //         i + 1
+      //       }</mark>`;
+      //     } else
+      //       header[i].innerHTML = `<mark style = "color : red">${i + 1}</mark>`;
+      //   }
+      // });
+
       document.addEventListener("DOMContentLoaded", () => {
         const header = document.querySelectorAll("h1");
         for (let i = 0; i < header.length; i++) {
+          header[i].innerHTML = `<mark><em>${i + 1}</em></mark>`;
+          const mk = document.querySelectorAll("mark");
           if (i % 2 === 0) {
-            header[i].innerHTML = `<mark style = "color : blue">${
-              i + 1
-            }</mark>`;
-          } else
-            header[i].innerHTML = `<mark style = "color : red">${i + 1}</mark>`;
+            mk[i].style.color = "red";
+          } else {
+            mk[i].style.color = "blue";
+          }
         }
       });
     </script>
