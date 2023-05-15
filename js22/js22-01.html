@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="sample.js"></script>
+    <script>
+      const id = [],
+        name = [],
+        username = [],
+        email = [],
+        city = [],
+        phone = [],
+        arr = [];
+      for (let i = 0; i < sample.length; i++) {
+        a = sample[i];
+        id[i] = a.id;
+        name[i] = a.name;
+        username[i] = a.username;
+        email[i] = a.email;
+        city[i] = a.address.city;
+        phone[i] = a.phone;
+      }
+      id.forEach((v, i) => {
+        let obj = {};
+        obj.id = id[i];
+        obj.name = name[i];
+        obj.username = username[i];
+        obj.email = email[i];
+        obj.city = city[i];
+        obj.phone = phone[i];
+        arr[i] = obj;
+      });
+
+      console.log(id);
+      console.log(name);
+      console.log(username);
+      console.log(email);
+      console.log(city);
+      console.log(phone);
+      console.log(JSON.stringify(arr, null, 2));
+    </script>
+  </head>
+  <body></body>
+</html>
