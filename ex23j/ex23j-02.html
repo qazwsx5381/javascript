@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>예제1</title>
+    <script>
+      //   document.addEventListener("DOMContentLoaded", () => {
+      //     const h1 = document.createElement("h1");
+      //     const div1 = document.createElement("div");
+      //     const div2 = document.createElement("div");
+      //     const span1 = document.createElement("span");
+      //     const span2 = document.createElement("span");
+      //     const span3 = document.createElement("span");
+      //     const span4 = document.createElement("span");
+      //     const ol = document.createElement("ol");
+      //     const li1 = document.createElement("li");
+      //     const li2 = document.createElement("li");
+      //     const li3 = document.createElement("li");
+      //     const br = document.createElement("br");
+      //     const a1 = document.createElement("a");
+      //     const a2 = document.createElement("a");
+
+      //     document.body.appendChild(h1);
+      //     document.body.appendChild(div1);
+      //     document.body.appendChild(div2);
+      //     document.body.appendChild(span3);
+      //     document.body.appendChild(br);
+      //     document.body.appendChild(span4);
+      //     div1.appendChild(span1);
+      //     div1.appendChild(span2);
+      //     div2.appendChild(ol);
+      //     ol.appendChild(li1);
+      //     ol.appendChild(li2);
+      //     ol.appendChild(li3);
+      //     span3.appendChild(a1);
+      //     span4.appendChild(a2);
+
+      //     span1.textContent = "1. 문서객체 생성하기";
+      //     span2.textContent = " 그리고 추가하기";
+      //     li1.textContent = "생성하고(장전)";
+      //     li2.textContent = "추가하고(겨냥)";
+      //     li3.textContent = "문서읽고(격발)";
+      //     a1.textContent = "네이버";
+      //     a2.textContent = "다음";
+
+      //     div1.setAttribute("class", "c1");
+      //     div2.setAttribute("class", "c2");
+      //     a1.setAttribute("href", "https://www.naver.com");
+      //     a2.setAttribute("href", "https://www.daum.net");
+      //   });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const body = document.querySelector("body");
+        body.style.backgroundColor = "rgba(50, 250, 200, 0.5)";
+        body.style.padding = "20px";
+        const div = (t) =>
+          `<div class = "c1" style = "color : red; font-size:40px;">${t}</div>`;
+        const div1 = (t) =>
+          `<div class = "c2" style = "color : blue;">${t}</div>`;
+        const ol = (t) =>
+          `<ol type='a' style="margin:auto auto 10px 20px; font-size:40px;">${t}</ol>`;
+        const li = (t) => `<li>${t}</li>`;
+        const span = (t) => `<span>${t}</span>`;
+        const a = (t) =>
+          `<a href = http://www.naver.com style="color:yellow; background-color:black; font-size:40px;">${t}</a>`;
+        const a1 = (t) =>
+          `<a href = http://www.daum.net style="color:yellow; background-color:black; font-size:40px;">${t}</a>`;
+        const br = (t) => `<br>`;
+        document.body.innerHTML =
+          div(span("1. 문서객체 생성하기") + span(" 그리고 추가하기")) +
+          div1(
+            ol(
+              li("생성하고(장전)") + li("추가하고(겨냥)") + li("문서읽고(격발)")
+            )
+          ) +
+          span(a("네이버")) +
+          br() +
+          span(a1("다음"));
+      });
+      // document.body.innerHTML = div(
+      //   span("1. 문서객체 생성하기") + span(" 그리고 추가하기")
+      // );
+      // document.body.innerHTML += div1(
+      //   ol(li("생성하고(장전)") + li("추가하고(겨냥)") + li("문서읽고(격발)"))
+      // );
+      // document.body.innerHTML += span(a("네이버")) + br();
+      // document.body.innerHTML += span(a1("다음"));
+    </script>
+  </head>
+  <body></body>
+</html>
