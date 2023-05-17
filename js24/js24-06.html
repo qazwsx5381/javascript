@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트 연결 제거하기(선생님 코드)</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let ct = 0;
+        const h1 = document.createElement("h1");
+        const btnstart = document.createElement("button");
+        const btnstop = document.createElement("button");
+        const p = document.createElement("p");
+        document.body.append(h1, btnstart, btnstop, p);
+        h1.style.userSelect = "none";
+        h1.textContent = "클릭횟수 : 0";
+        btnstart.textContent = "이벤트 연결";
+        btnstop.textContent = "이벤트 종료";
+
+        const fn = () => (h1.innerHTML = `클릭횟수 : ${ct++}`);
+        btnstart.addEventListener("click", () => {
+          h1.addEventListener("click", fn);
+          btnstart.innerHTML = "이벤트 연결 중";
+          btnstop.innerHTML = "이벤트 종료";
+          p.innerHTML = "이벤트 연결 상태 : 연결중";
+        });
+        btnstop.addEventListener("click", () => {
+          h1.removeEventListener("click", fn);
+          btnstart.innerHTML = "이벤트 연결";
+          btnstop.innerHTML = "이벤트 종료됨";
+          p.innerHTML = "이벤트 연결 상태 : 종료됨";
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

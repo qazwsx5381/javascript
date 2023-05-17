@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트 연결 제거하기(body 제거)</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let counter = 0;
+        let isConnect = false;
+        const h1 = document.createElement("h1");
+        const button = document.createElement("button");
+        const button1 = document.createElement("button");
+        const p = document.createElement("p");
+        document.body.append(h1, button, button1, p);
+        h1.innerHTML = "클릭 횟수 : 0";
+        button.innerHTML = "이벤트 동작";
+        button1.innerHTML = "이벤트 제거";
+        p.innerHTML = "이벤트 연결 상태 : 제거";
+        h1.setAttribute("style", "user-select:none");
+        const listener = (event) => {
+          h1.textContent = `클릭 횟수 : ${counter++}`;
+        };
+        button.addEventListener("click", () => {
+          if (isConnect === false) {
+            h1.addEventListener("click", listener);
+            p.textContent = "이벤트 연결 상태 : 연결";
+            isConnect = true;
+          }
+        });
+        button1.addEventListener("click", () => {
+          if (isConnect === true) {
+            h1.removeEventListener("click", listener);
+            p.textContent = "이벤트 연결 상태 : 해제";
+            isConnect = false;
+          }
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

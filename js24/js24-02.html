@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서객체 이동하기(body 생략)</title>
+    <script>
+      /* document.body.append(div, hr, div1); // append는 리턴 값이 없다. */
+      /* document.body.appendChild(div); // appendChild는 리턴 값이 있음. // 출력 : <div></div> */
+      document.addEventListener("DOMContentLoaded", () => {
+        const div = document.createElement("div");
+        const div1 = document.createElement("div");
+        const h1 = document.createElement("h1");
+        document.body.append(div, div1); //.append(h1_1);
+        div.setAttribute("id", "first");
+        div.setAttribute("style", "color:red; background-color:black");
+        div1.setAttribute("id", "second");
+        div1.setAttribute("style", "color:yellow; background-color:black");
+        div.innerHTML = "<h1>첫번째 div 태그 내부</h1>";
+        div1.innerHTML = "<hr><h1>두번째 div 태그 내부</h1>";
+        h1.textContent = "이동하는 h1 태그";
+
+        const toFirst = () => {
+          div.appendChild(h1);
+          setTimeout(toSecond, 1000);
+        };
+        const toSecond = () => {
+          div1.appendChild(h1);
+          setTimeout(toFirst, 1000);
+        };
+        toFirst();
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
