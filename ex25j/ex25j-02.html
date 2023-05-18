@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>속성 조작하기</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        for (let i = 0; i < 5; i++) {
+          const img = document.createElement("img");
+          document.body.appendChild(img);
+          const width = (i + 1) * 100;
+          const src = `http://placekitten.com/150/${width}`;
+          img.setAttribute("src", src);
+          img.addEventListener("contextmenu", (event) => {
+            event.preventDefault(); // 우클릭 막는 메소드
+          });
+        }
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

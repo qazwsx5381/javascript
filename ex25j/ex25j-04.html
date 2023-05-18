@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const test1 = document.getElementById("test1");
+        const test2 = document.getElementById("test2");
+        const button = document.getElementsByTagName("button"); // 배열형태로 불러오기 때문에 배열의 값을 선택해줘야함
+        button[0].addEventListener("click", (event) => {
+          console.log(event.currentTarget);
+          console.log(test1);
+          console.log(test1.value);
+        });
+        test2.addEventListener("change", (event) => {
+          console.log(event.currentTarget); // <input type="file" id="test2" />
+          console.log(event.currentTarget.value); // c:\fakepath\8741341.jpg
+        });
+      });
+    </script>
+    <style>
+      input:nth-of-type(2) {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="test1">입력하세요 : </label>
+    <input type="text" id="test1" />
+    <button>전송</button>
+    <hr />
+    <label for="test2">업로드</label>
+    <input type="file" id="test2" />
+  </body>
+</html>

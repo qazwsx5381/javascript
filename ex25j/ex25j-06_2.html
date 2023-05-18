@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>단위 변환기(body 내용 제거)</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const label = document.createElement("label");
+        const input = document.createElement("input");
+        const button = document.createElement("button");
+        const h1 = document.createElement("h1");
+        document.body.append(label, input, button, h1);
+        label.setAttribute("for", "dollar");
+        button.setAttribute("id", "dollar");
+        label.textContent = `환전할 달러 입력 : `;
+        button.textContent = "환전";
+        button.addEventListener("click", () => {
+          const dollar = Number(input.value);
+          if (isNaN(dollar)) {
+            h1.textContent = "숫자를 입력하세요";
+            return;
+          }
+          const won = dollar * 1335;
+          h1.textContent = `${won} 원 입니다.`;
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>단위 변환기</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const label = document.getElementsByName("label");
+        const input = document.getElementById("dollar");
+        const button = document.getElementsByTagName("button");
+        const h1 = document.getElementsByTagName("h1");
+        button[0].addEventListener("click", () => {
+          const dollar = Number(input.value);
+          if (isNaN(dollar)) {
+            h1[0].textContent = "숫자를 입력하세요";
+            return;
+          }
+          const won = dollar * 1335;
+          h1[0].textContent = `${won} 원 입니다.`;
+        });
+      });
+    </script>
+    <style>
+      body {
+        background-color: rgba(182, 134, 134, 0.644);
+      }
+      label {
+        color: yellow;
+        font-size: 3rem;
+      }
+      input {
+        width: 10rem;
+        height: 3rem;
+        font-size: 3rem;
+        margin-top: 0;
+      }
+      button {
+        font-size: 3rem;
+        padding: 0;
+        border: 3px dotted black;
+      }
+      button:hover {
+        background-color: rgb(230, 230, 230);
+      }
+      h1 {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="dollar">환전할 달러 : </label>
+    <input type="text" id="dollar" />
+    <button>환전</button>
+    <h1 class="a1"></h1>
+  </body>
+</html>

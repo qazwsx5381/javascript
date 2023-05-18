@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>키로 별 움직이기(key (문자열!) 사용)</title>
+    <script>
+      const game = prompt("게임 횟수를 입력하시오") * 1;
+      document.addEventListener("DOMContentLoaded", () => {
+        const star = document.createElement("h1");
+        const star1 = document.createElement("h1");
+        const text = document.createElement("h1");
+        let cnt = 0;
+        document.body.append(star);
+        document.body.append(star1);
+        document.body.append(text);
+        star.textContent = "☆";
+        star1.textContent = "◆";
+        text.textContent = `점수 : ${cnt}`;
+        star.style.position = "absolute";
+        star1.style.position = "absolute";
+        text.style.position = "block";
+        text.style.textAlign = "right";
+        let [x, y] = [0, 0];
+        const block = 20;
+        let x_1 = Math.floor(Math.random() * 20 + 1);
+        let y_1 = Math.floor(Math.random() * 20 + 1);
+        const print = () => {
+          star.style.left = `${x * block}px`;
+          star.style.top = `${y * block}px`;
+        };
+        let print_1 = () => {
+          star1.style.left = `${x_1 * block}px`;
+          star1.style.top = `${y_1 * block}px`;
+        };
+        print();
+        print_1();
+        document.body.addEventListener("keydown", (event) => {
+          switch (event.key) {
+            case "ArrowLeft":
+              x -= 1;
+              break;
+            case "ArrowUp":
+              y -= 1;
+              break;
+            case "ArrowRight":
+              x += 1;
+              break;
+            case "ArrowDown":
+              y += 1;
+              break;
+          }
+          print();
+          if (x === x_1 && y === y_1) {
+            x_1 = Math.floor(Math.random() * 20 + 1);
+            y_1 = Math.floor(Math.random() * 20 + 1);
+            cnt++;
+            // star.style.fontSize = `${2 + cnt}rem`;
+            text.textContent = `점수 : ${cnt}`;
+            print_1();
+          }
+          if (cnt === game) {
+            document.body.removeChild(star);
+            document.body.removeChild(star1);
+            text.innerHTML = `점수 : ${cnt}<br>게임이 종료되었습니다.`;
+            text.style.position = "block";
+            text.style.textAlign = "center";
+            text.style.fontSize = "3rem";
+          }
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
