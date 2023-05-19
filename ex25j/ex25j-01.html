@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>키로 별 움직이기(key (문자열!) 사용)</title>
+    <title>별로 팩맨 만들기</title>
     <script>
       const game = prompt("게임 횟수를 입력하시오") * 1;
       document.addEventListener("DOMContentLoaded", () => {
@@ -40,15 +40,19 @@
           switch (event.key) {
             case "ArrowLeft":
               x -= 1;
+              star.textContent = "◀";
               break;
             case "ArrowUp":
               y -= 1;
+              star.textContent = "▲";
               break;
             case "ArrowRight":
               x += 1;
+              star.textContent = "▶";
               break;
             case "ArrowDown":
               y += 1;
+              star.textContent = "▼";
               break;
           }
           print();

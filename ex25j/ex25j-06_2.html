@@ -18,11 +18,12 @@
         button.textContent = "환전";
         button.addEventListener("click", () => {
           const dollar = Number(input.value);
-          if (isNaN(dollar)) {
+          if (isNaN(dollar) || dollar == false) {
             h1.textContent = "숫자를 입력하세요";
             return;
           }
-          const won = dollar * 1335;
+          const won = (dollar * 1335).toLocaleString(3, ",");
+          console.log(dollar);
           h1.textContent = `${won} 원 입니다.`;
         });
       });

@@ -7,17 +7,17 @@
     <title>단위 변환기</title>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const label = document.getElementsByName("label");
+        // const label = document.getElementsByName("label");
         const input = document.getElementById("dollar");
         const button = document.getElementsByTagName("button");
         const h1 = document.getElementsByTagName("h1");
         button[0].addEventListener("click", () => {
           const dollar = Number(input.value);
-          if (isNaN(dollar)) {
+          if (isNaN(dollar) || dollar == false) {
             h1[0].textContent = "숫자를 입력하세요";
             return;
           }
-          const won = dollar * 1335;
+          const won = (dollar * 1335).toLocaleString(3, ",");
           h1[0].textContent = `${won} 원 입니다.`;
         });
       });
@@ -39,7 +39,7 @@
       button {
         font-size: 3rem;
         padding: 0;
-        border: 3px dotted black;
+        border: 3px dashed black;
       }
       button:hover {
         background-color: rgb(230, 230, 230);
