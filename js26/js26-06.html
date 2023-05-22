@@ -7,34 +7,48 @@
     <title>단위 변환 프로그램(body 내용 제거)</title>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        let 현재값;
-        // let 변환상수 = 10;
-        //const select = document.querySelector("select");
-        //const input = document.querySelector("input");
-        //const span = document.querySelector("span");
+        let now;
+        let raw = 1;
+        let trans = 1;
+        let sel = document.querySelector("select:nth-of-type(1)");
+        let sel1 = document.querySelector("select:nth-of-type(2)");
+        let input = document.querySelector("input");
+        const span = document.querySelector("span");
         const calculate = () => {
-          span.textContent = (현재값 * 변환상수).toFixed(2);
+          if (trans === raw) span.textContent = ` = ${now.toFixed(3)}`;
+          else span.textContent = ` = ${(now * raw * trans).toFixed(3)}`;
         };
-        select.addEventListener("change", (event) => {
+        sel1.addEventListener("change", (event) => {
+          const options1 = event.currentTarget.options;
+          const index1 = event.currentTarget.options.selectedIndex;
+          trans = Number(options1[index1].value);
+          calculate();
+        });
+        sel.addEventListener("change", (event) => {
           const options = event.currentTarget.options;
-          const index = event.currentTarget.options.selectedIndex;
-          변환상수 = Number(options[index].value);
+          index = event.currentTarget.options.selectedIndex;
+          raw = Number(options[index].value);
           calculate();
         });
         input.addEventListener("keyup", (event) => {
-          현재값 = Number(event.currentTarget.value);
+          now = Number(event.currentTarget.value);
           calculate();
         });
       });
     </script>
   </head>
   <body>
-    <input type="text" /> cm =
-    <span></span>
+    <input type="text" />
     <select name="" id="">
-      <option value="10">mm</option>
-      <option value="0.01">m</option>
-      <option value="0.393701">inch</option>
+      <option value="1">mm</option>
+      <option value="1000">m</option>
+      <option value="25.4">inch</option>
+    </select>
+    <span> = </span>
+    <select name="" id="">
+      <option value="1">mm</option>
+      <option value="0.001">m</option>
+      <option value="0.0393701">inch</option>
     </select>
   </body>
 </html>

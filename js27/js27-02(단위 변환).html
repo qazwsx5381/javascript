@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구글 단위 변환기 만들기</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const array = [
+          "km",
+          "m",
+          "cm",
+          "mm",
+          "um",
+          "nm",
+          "mile",
+          "yard",
+          "feet",
+          "inch",
+          "sea",
+        ];
+        const div = (c1 = "") =>
+          `<div style = "display:inline-block">${c1}</div>`;
+        const span = (c1 = "") => `<span>${c1}</span>`;
+        const br = (c1 = "") => `<br>`;
+        const input = (c1 = "") => `<input>${c1}</input>`;
+        const select = (c1 = "") => `<select>${c1}</select>`;
+        const option = (c1 = "") => `<option>${c1}</option>`;
+        document.body.innerHTML =
+          div(
+            input() +
+              br() +
+              select(
+                option("킬로미터") +
+                  option("미터") +
+                  option("센치미터") +
+                  option("밀리미터") +
+                  option("마이크로미터") +
+                  option("나노미터") +
+                  option("마일") +
+                  option("야드") +
+                  option("피트") +
+                  option("인치") +
+                  option("해리")
+              )
+          ) +
+          span("=") +
+          div(
+            input() +
+              br() +
+              select(
+                option("킬로미터") +
+                  option("미터") +
+                  option("센치미터") +
+                  option("밀리미터") +
+                  option("마이크로미터") +
+                  option("나노미터") +
+                  option("마일") +
+                  option("야드") +
+                  option("피트") +
+                  option("인치") +
+                  option("해리")
+              )
+          );
+        const first = document.querySelectorAll(
+          "div:first-child>select>option"
+        );
+        const second = document.querySelectorAll(
+          "div:first-child>select>option"
+        );
+        const inp = document.querySelectorAll("input");
+        console.log(inp);
+        inp.forEach((v, i) => {
+          inp[i].setAttribute("type", "text");
+        });
+        first.forEach((v, i) => {
+          first[i].setAttribute("value", `${array[i]}`);
+          second[i].setAttribute("value", `${array[i]}`);
+        });
+
+        console.log(first);
+        console.log(second);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
