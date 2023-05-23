@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const h1 = document.createElement("h1");
+        const div = document.createElement("div");
+        const indiv = document.createElement("div");
+        const span = document.createElement("span");
+        document.body.append(h1, div);
+        div.append(indiv, span);
+        h1.textContent = "className과 classList를 사용해보기";
+        /* className에 대입하기 */
+        div.className = "클래스 1번";
+        /* classList를 이용해 class메소드 추가(복수 가능) */
+        indiv.classList.add("내부클래스1", "여기추가요");
+        /* classList를 이용한 존재 확인 ( 결과값 : boolean ) */
+        const what = indiv.classList.contains("여기추가요");
+        console.log(what);
+        /* classList를 이용한 메소드 변경 */
+        span.classList.add("a1", "a2", "a3", "a4");
+        const what_1 = span.classList.contains("a2");
+        console.log(what_1);
+        span.classList.replace("a2", "cc22");
+        const what_2 = span.classList.contains("a2");
+        console.log(what_2);
+        /* classList를 이용한 메소드 삭제 */
+        span.classList.remove("cc22");
+        /* classList를 이용한 메소드 갯수 확인 */
+        const length = span.classList.length;
+        span.textContent = length + "개의 클래스를 가짐";
+        console.log(length);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

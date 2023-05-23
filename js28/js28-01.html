@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>할 일 목록</title>
+    <style>
+      .check-ok {
+        text-decoration: line-through;
+        color: gray;
+      }
+      .check-no {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        /* DOM 구성 */
+        const h1 = document.createElement("h1");
+        const input = document.createElement("input");
+        const button = document.createElement("button");
+
+        document.body.append(h1, input, button);
+        h1.innerHTML = "할 일 목록!!";
+        input.setAttribute("id", "todo");
+        input.style.height = "30px";
+        input.style.marginRight = "10px";
+        button.innerHTML = "추가하기";
+
+        /* 입력한 부분 변수로 받기*/
+        let content = "";
+        input.addEventListener("change", (e) => {
+          content = e.currentTarget.value;
+        });
+
+        /* 동작 1단계 */
+        ct = 0;
+        button.addEventListener("click", (e) => {
+          if (content) {
+            const div = document.createElement("div");
+            const check = document.createElement("input");
+            const span = document.createElement("span");
+            const inbutton = document.createElement("button");
+
+            document.body.append(div);
+            div.append(check, span, inbutton);
+            inbutton.innerHTML = "삭제하기";
+            // check.setAttribute("class", ct++);
+            check.className = ct++;
+            check.setAttribute("type", "checkbox");
+            span.innerHTML = content;
+            input.value = "";
+            content = "";
+
+            /* 체크 방법1 */
+            // check.addEventListener("change", (e) => {
+            //   if (e.currentTarget.checked) {
+            //     span.style.textDecoration = "line-through";
+            //   } else {
+            //     span.style.textDecoration = "none";
+            //   }
+            // });
+            /* 체크 방법2 */
+            check.addEventListener("change", (e) => {
+              if (e.currentTarget.checked) {
+                span.className = "check-ok";
+              } else {
+                span.className = "check-no";
+              }
+            });
+
+            inbutton.addEventListener("click", (e) => {
+              document.body.removeChild(div);
+            });
+          } else {
+            alert("내용을 입력해주세요.");
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- <div>
+    <input type="checkbox" /><span>할일이 여기에</span><button>삭제</button>
+  </div> -->
+  </body>
+</html>

@@ -20,6 +20,10 @@
           "inch",
           "sea",
         ];
+        const array1 = [
+          1, 1000, 100000, 1e6, 1e9, 1e12, 0.621, 1093.61, 3280.84, 39370.1,
+          0.539957,
+        ];
         const div = (c1 = "") =>
           `<div style = "display:inline-block">${c1}</div>`;
         const span = (c1 = "") => `<span>${c1}</span>`;
@@ -63,11 +67,16 @@
                   option("해리")
               )
           );
+        input.type = "text";
+        let a1 = "";
+        let a2 = 1;
+        let a3 = 1;
+        let a4 = 1;
         const first = document.querySelectorAll(
           "div:first-child>select>option"
         );
         const second = document.querySelectorAll(
-          "div:first-child>select>option"
+          "div:last-child>select>option"
         );
         const inp = document.querySelectorAll("input");
         console.log(inp);
@@ -78,9 +87,41 @@
           first[i].setAttribute("value", `${array[i]}`);
           second[i].setAttribute("value", `${array[i]}`);
         });
-
-        console.log(first);
-        console.log(second);
+        const sel = document.querySelector("div:first-child>select");
+        const sel1 = document.querySelector("div:last-child>select");
+        const input_1 = document.querySelector("div:first-child>input");
+        const input_2 = document.querySelector("div:last-child>input");
+        // input_1.value = `${a1}`;
+        // input_2.value = `${a3}`;
+        const calculate = () => {
+          // if (a1 === a3) input_1.value = `${a1.toFixed(3)}`;
+          input_1.value = `${(a1 * a2).toFixed(3)}`;
+        };
+        const calculate1 = () => {
+          // if (a1 === a3) input_2.value = `${a3.toFixed(3)}`;
+          input_2.value = `${(a3 * a4).toFixed(3)}`;
+        };
+        input_1.addEventListener("change", (event) => {
+          a1 = Number(event.currentTarget.value);
+          calculate();
+        });
+        input_2.addEventListener("change", (event) => {
+          a3 = Number(event.currentTarget.value);
+          calculate1();
+        });
+        sel1.addEventListener("change", (event) => {
+          const options = event.currentTarget.options;
+          const index = event.currentTarget.options.selectedIndex;
+          a2 = Number(array1[index]);
+          // console.log(options, index, a2);
+          calculate1();
+        });
+        sel.addEventListener("change", (event) => {
+          const options1 = event.currentTarget.options;
+          const index1 = event.currentTarget.options.selectedIndex;
+          a4 = Number(array1[index1]);
+          calculate();
+        });
       });
     </script>
   </head>
