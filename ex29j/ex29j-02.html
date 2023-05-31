@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>유사배열을 배열로</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const query = document.querySelectorAll("div");
+        const getBy = document.getElementsByClassName("c1");
+        console.log(query);
+        console.log(getBy);
+        console.log([1, 2, 3]);
+        const array1 = Array.from(query); // 유사배열에서 배열로 바뀜
+        const array2 = Array.from(getBy); // 유사배열에서 배열로 바뀜
+        array1.push("push로추가함"); // array 일때만 실행됨
+        array2.push("push로추가함"); // array 일때만 실행됨
+        console.log("nodeList:", array1, Array.isArray(array1));
+        console.log("HTMLcollection:", array2, Array.isArray(array2));
+      });
+    </script>
+  </head>
+  <body>
+    <div class="c1"></div>
+    <div class="c1"></div>
+    <div class="c1"></div>
+    <div class="c1"></div>
+    <div class="c1"></div>
+  </body>
+</html>

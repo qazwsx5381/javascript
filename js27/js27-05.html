@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>할 일 목록 만들기</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+        const saveValue = localStorage.getItem("input0");
         let h1 = document.createElement("h1");
         let input = document.createElement("input");
         let div = document.createElement("div");
         let div1 = document.createElement("div");
+        let div2 = document.createElement("div");
         let button = document.createElement("button");
         let del = document.createElement("button");
         let del1 = document.createElement("button");
         let br = document.createElement("br");
         let choice = "";
+        let arr = [];
         h1.innerHTML = "할 일 목록";
         button.innerHTML = "추가하기";
         del.innerHTML = "전체 삭제하기";
@@ -26,39 +30,96 @@
         button.setAttribute("class", "main");
         del.setAttribute("class", "main");
         del1.setAttribute("class", "main");
-        document.body.append(h1, br, div, div1);
+        document.body.append(div2);
+        div2.append(h1, br, div, div1);
         div.append(button, del, del1);
         div1.append(input);
         div.className = "input";
         div1.className = "input_1";
+        div2.className = "title";
         input.addEventListener("change", (event) => {
           choice = event.currentTarget.value;
         });
         count = 0;
-
-        button.addEventListener("click", (e) => {
-          if (choice) {
+        // object = JSON.parse(saveValue);
+        if (saveValue) {
+          arr = JSON.parse(saveValue);
+          for (let i = 0; i < arr.length; i++) {
+            const choice = arr[i];
             const div = document.createElement("div");
             const span = document.createElement("span");
             const button1 = document.createElement("button");
             const input1 = document.createElement("input");
-            document.body.append(div);
+
+            div2.append(div);
             div.append(input1, span, button1);
+            div.className = `class_insert`;
             input1.className = "insert";
             span.className = "span_insert";
-            button.className = "button_insert";
+            button1.className = "test";
             input1.type = "checkbox";
             span.innerHTML = choice;
             button1.innerHTML = "제거하기";
+            input1.addEventListener("change", (e) => {
+              if (e.currentTarget.checked) {
+                span.style.cssText = "text-decoration:line-through; color:red;";
+              } else {
+                span.style.cssText = "text-decoration:underline; color:black;";
+              }
+            });
+            button1.addEventListener("click", (e) => {
+              if (input1.checked) {
+                div.remove();
+                console.log(arr);
+                arr.splice(choice, 1);
+                console.log(arr.splice(choice, 1));
+                localStorage.setItem("input0", JSON.stringify(arr));
+              }
+            }); // 선택되면 삭제
+            del.addEventListener("click", (e) => {
+              div2.removeChild(div);
+            }); // 전체삭제
+            del1.addEventListener("click", (e) => {
+              if (input1.checked) div2.removeChild(div);
+            }); // 선택항목 삭제
+          }
+        }
+
+        new TypeIt(h1)
+          .pause(2000) // 1초를 기다림
+          .go(); // 실행하기
+
+        button.addEventListener("click", (e) => {
+          if (choice) {
+            count++;
+            let a1 = count;
+            const div = document.createElement("div");
+            const span = document.createElement("span");
+            const button1 = document.createElement("button");
+            const input1 = document.createElement("input");
+
+            div2.append(div);
+            div.append(input1, span, button1);
+            // div.append(input1, span);
+            div.className = `class_insert ${a1}`;
+            input1.className = "insert";
+            span.className = "span_insert";
+            button1.className = "test";
+            input1.type = "checkbox";
+            span.innerHTML = choice;
+            button1.innerHTML = "제거하기";
+
+            arr.push(choice);
+            localStorage.setItem("input0", JSON.stringify(arr));
+
             input.value = "";
             choice = "";
-            count++;
             //체크 방법 1
             input1.addEventListener("change", (e) => {
               if (e.currentTarget.checked) {
                 span.style.cssText = "text-decoration:line-through; color:red;";
               } else {
-                span.style.cssText = "text-decoration:none; color:black;";
+                span.style.cssText = "text-decoration:underline; color:black;";
               }
             });
             //체크 방법2
@@ -70,22 +131,190 @@
             //   }
             // }); // 선택시 빨간 줄 끗기
 
-            span.classList.add(`${count}`);
+            // div.addEventListener("mouseenter", () => {
+            //   div.style.backgroundColor = "black";
+            //   div.append(button1);
+            // });
+            // button1.addEventListener("mouseover", () => {
+            //   botton1.style.backgroundColor = "rgb(73, 208, 241)";
+            // });
+            // button1.addEventListener("mouseout", () => {
+            //   botton1.style.backgroundColor = "rgb(73, 208, 241)";
+            // });
+            // div.addEventListener("mouseout", () => {
+            //   div.style.backgroundColor = "white";
+            //   div.removeChild(button1);
+            // });
+
+            span.classList.add(`${a1}`);
             button1.addEventListener("click", (e) => {
-              if (input1.checked) div.remove();
+              if (input1.checked) {
+                div.remove();
+                arr.splice(choice, 1);
+                localStorage.setItem("input0", JSON.stringify(arr));
+              }
             }); // 선택되면 삭제
             del.addEventListener("click", (e) => {
-              document.body.removeChild(div);
+              div2.removeChild(div);
             }); // 전체삭제
             del1.addEventListener("click", (e) => {
-              if (input1.checked) document.body.removeChild(div);
+              if (input1.checked) div2.removeChild(div);
             }); // 선택항목 삭제
+            location.reload(); // 새로고침
           } else {
             alert("항목을 입력하세요");
           }
         });
       });
     </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+      :root {
+        --button-color: #ffffff;
+        --button-bg-color: #0d6efd;
+        --button-hover-bg-color: #025ce2;
+      }
+      .main {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        background: var(--button-bg-color);
+        color: var(--button-color);
+
+        margin: 10px 5px;
+        padding: 0.5rem 1rem;
+
+        font-family: "Noto Sans KR", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        text-align: center;
+        text-decoration: none;
+
+        border: none;
+        border-radius: 4px;
+
+        position: relative;
+        /* width: auto; */
+
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+        cursor: pointer;
+
+        transition: 0.5s;
+        text-align: center;
+      }
+      .main:hover {
+        background-color: rgb(73, 208, 241);
+      }
+
+      .main.success {
+        --button-bg-color: #28a745;
+        --button-hover-bg-color: #218838;
+      }
+      .title {
+        width: 600px;
+        height: auto;
+        border: 2px solid black;
+        position: relative;
+        margin: auto;
+        box-shadow: 3px 3px 10px gray;
+      }
+      h1 {
+        /* position: fixed; */
+        text-align: center;
+      }
+      div {
+        text-align: center;
+      }
+      #todo {
+        font-size: 15px;
+        color: #222222;
+        width: 400px;
+        border: none;
+        border-bottom: solid #aaaaaa 1px;
+        padding-bottom: 10px;
+        text-align: center;
+        position: relative;
+        background: none;
+        z-index: 5;
+      }
+      #todo:focus {
+        outline: none;
+      }
+      .input {
+        width: 400px;
+        height: auto;
+        margin: auto 100px;
+      }
+      .input_1 {
+        margin: 20px 0;
+      }
+
+      .class_insert {
+        width: 400px;
+        position: relative;
+        margin: 10px auto;
+        vertical-align: middle;
+        border-radius: 50px;
+        background-color: rgb(219, 203, 240);
+        box-shadow: 5px 2px 5px gray;
+      }
+      .class_insert:hover {
+        background-color: rgb(238, 238, 154);
+        color: rgb(22, 109, 185);
+        border: none;
+        border-radius: 50px;
+      }
+
+      .test {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        background: var(--button-bg-color);
+        color: var(--button-color);
+
+        margin: 10px 13px;
+        padding: 0.5rem 1rem;
+
+        font-family: "Noto Sans KR", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        text-align: center;
+        text-decoration: none;
+
+        border: none;
+        border-radius: 4px;
+
+        /* display: inline-block; */
+        /* width: auto; */
+
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+        cursor: pointer;
+
+        transition: 0.5s;
+        text-align: center;
+      }
+      .test:hover {
+        background-color: rgb(73, 208, 241);
+      }
+      .span_insert {
+        width: 240px;
+        display: inline-block;
+        text-align: left;
+        text-decoration: underline;
+        word-wrap: break-word;
+        vertical-align: middle;
+      }
+      .insert {
+        margin-left: 13px;
+        margin-right: 13px;
+      }
+    </style>
   </head>
   <body></body>
 </html>

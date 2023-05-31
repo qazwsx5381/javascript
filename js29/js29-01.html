@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>할 일 목록 만들기</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let h1 = document.createElement("h1");
+        let input = document.createElement("input");
+        let div = document.createElement("div");
+        let div1 = document.createElement("div");
+        let button = document.createElement("button");
+        let del = document.createElement("button");
+        let del1 = document.createElement("button");
+        let br = document.createElement("br");
+        let choice = "";
+        h1.innerHTML = "할 일 목록";
+        button.innerHTML = "추가하기";
+        del.innerHTML = "전체 삭제하기";
+        del1.innerHTML = "선택항목 삭제하기";
+        input.type = "text";
+        input.setAttribute("id", "todo");
+        button.setAttribute("class", "main");
+        del.setAttribute("class", "main");
+        del1.setAttribute("class", "main");
+        document.body.append(h1, br, div, div1);
+        div.append(button, del, del1);
+        div1.append(input);
+        div.className = "input";
+        div1.className = "input_1";
+        input.addEventListener("change", (event) => {
+          choice = event.currentTarget.value;
+        });
+        count = 0;
+
+        button.addEventListener("click", (e) => {
+          if (choice) {
+            const div = document.createElement("div");
+            const span = document.createElement("span");
+            const button1 = document.createElement("button");
+            const input1 = document.createElement("input");
+            document.body.append(div);
+            div.append(input1, span, button1);
+            input1.className = "insert";
+            span.className = "span_insert";
+            button.className = "button_insert";
+            input1.type = "checkbox";
+            span.innerHTML = choice;
+            button1.innerHTML = "제거하기";
+            input.value = "";
+            choice = "";
+            count++;
+            //체크 방법 1
+            input1.addEventListener("change", (e) => {
+              if (e.currentTarget.checked) {
+                span.style.cssText = "text-decoration:line-through; color:red;";
+              } else {
+                span.style.cssText = "text-decoration:none; color:black;";
+              }
+            });
+            //체크 방법2
+            // input1.addEventListener("change", (e) => {
+            //   if (e.currentTarget.checked) {
+            //     span.classList.add("check");
+            //   } else {
+            //     span.classList.remove("check");
+            //   }
+            // }); // 선택시 빨간 줄 끗기
+
+            span.classList.add(`${count}`);
+            button1.addEventListener("click", (e) => {
+              if (input1.checked) div.remove();
+            }); // 선택되면 삭제
+            del.addEventListener("click", (e) => {
+              document.body.removeChild(div);
+            }); // 전체삭제
+            del1.addEventListener("click", (e) => {
+              if (input1.checked) document.body.removeChild(div);
+            }); // 선택항목 삭제
+          } else {
+            alert("항목을 입력하세요");
+          }
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

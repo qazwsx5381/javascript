@@ -12,7 +12,7 @@
         background: var(--button-bg-color);
         color: var(--button-color);
 
-        margin:auto;
+        margin:10px 5px;
         padding: 0.5rem 1rem;
 
         font-family: "Noto Sans KR", sans-serif;
@@ -23,9 +23,8 @@
 
         border: none;
         border-radius: 4px;
-        margin-left:auto;
 
-        /* display: inline-block; */
+        position: relative;
         /* width: auto; */
 
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -37,15 +36,21 @@
         text-align: center;
         
       }
+      .main:hover {
+        background-color: rgb(73, 208, 241);
+      }
 
       .main.success {
         --button-bg-color: #28a745;
         --button-hover-bg-color: #218838;
       }
-      body {
+      .title {
         width: 600px;
         height: auto;
         border: 2px solid black;
+        position: relative;
+        margin: auto;
+        box-shadow: 3px 3px 10px gray;
       }
       h1 {
         /* position: fixed; */
@@ -57,7 +62,7 @@
       #todo {
         font-size: 15px;
         color: #222222;
-        width: 300px;
+        width: 400px;
         border: none;
         border-bottom: solid #aaaaaa 1px;
         padding-bottom: 10px;
@@ -78,12 +83,66 @@
         margin: 20px 0;
       }
 
-      /* .insert {
-        margin-left : 100px;
+      .class_insert{
+        width: 400px;
+        position: relative;
+        margin: 10px auto;
+        vertical-align: middle;
+        border-radius:50px;
+        background-color: rgb(219, 203, 240);
+        box-shadow: 5px 2px 5px gray;
       }
-      .span_insert {
-        margin-left : 150px;
+      .class_insert:hover{
+        background-color:rgb(238, 238, 154);
+        color:rgb(22, 109, 185);
+        border: none;
+        border-radius:50px;
       }
-      .button_insert {
-        margin-right: 100px;
-      } */
+
+      .test{
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+  
+          background: var(--button-bg-color);
+          color: var(--button-color);
+  
+          margin:10px 13px;
+          padding: 0.5rem 1rem;
+  
+          font-family: "Noto Sans KR", sans-serif;
+          font-size: 1rem;
+          font-weight: 400;
+          text-align: center;
+          text-decoration: none;
+  
+          border: none;
+          border-radius: 4px;
+  
+          /* display: inline-block; */
+          /* width: auto; */
+  
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  
+          cursor: pointer;
+  
+          transition: 0.5s;
+          text-align: center;
+          
+        }
+        .test:hover {
+          background-color: rgb(73, 208, 241);
+        }
+  .span_insert{
+    width: 240px;
+    display: inline-block;
+    text-align: left;
+    text-decoration: underline;
+    word-wrap: break-word;
+    vertical-align: middle;
+  }
+  .insert{
+    margin-left: 13px;
+    margin-right:13px;
+  }
