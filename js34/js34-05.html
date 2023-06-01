@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      class Rectangle {
+        constructor(width, height) {
+          this.width = width;
+          this.height = height;
+        }
+        getPerimeter() {
+          return 2 * (this.width + this.height);
+        }
+        getArea() {
+          return this.width * this.height;
+        }
+      }
+      /* 
+      상속
+      extends
+      super // 부모의 생성자 함수를 호출하는 코드입니다.
+      */
+      class Square extends Rectangle {
+        constructor(length) {
+          super(length, length);
+        }
+      }
+      const square = new Square(10);
+      console.log("square의 둘레는 " + square.getPerimeter());
+      console.log("square의 넓이는 " + square.getArea());
+
+      /*
+      프레임워크  // 공장 흐름과 주도권
+      라이브러리  // 나의 흐름과 주도권
+      애플리케이션  // 서비스
+      */
+    </script>
+  </head>
+  <body></body>
+</html>
