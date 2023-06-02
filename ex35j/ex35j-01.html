@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /* get, set 사용전 */
+      //   const user = { name: "홍길동", age: 33 };
+      //   console.log(user.name);
+      //   console.log(user.age);
+      //   user.name = "박길동";
+      //   console.log(user.name);
+
+      const user = {
+        name: "홍길동",
+        age: 33,
+        // 객제의 매서드
+        getName() {
+          return user.name;
+        },
+        setName(value) {
+          user.name = value;
+        },
+      };
+      console.log(user.getName());
+      user.setName("김길동");
+      console.log(user.getName());
+    </script>
+  </head>
+  <body></body>
+</html>

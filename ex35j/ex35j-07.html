@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const array = ["About", "Products", "Technology", "Downloads", "Etc"];
+        const div = document.createElement("div");
+        const div1 = document.createElement("div");
+        const div2 = document.createElement("div");
+        const div3 = document.createElement("div");
+        const div4 = document.createElement("div");
+        const div5 = document.createElement("div");
+        document.body.append(div);
+        div.append(div1, div2, div3, div4, div5);
+        div.classList = "mov";
+        div1.classList = "mov_1";
+        div2.classList = "mov_1";
+        div3.classList = "mov_1";
+        div4.classList = "mov_1";
+        div5.classList = "mov_1";
+        div1.textContent = array[0];
+        div2.textContent = array[1];
+        div3.textContent = array[2];
+        div4.textContent = array[3];
+        div5.textContent = array[4];
+        let sty = document.querySelector("div.mov");
+        let sty_1 = document.querySelectorAll("div.mov_1");
+        sty.style.cssText =
+          "flex-direction:column; color:white; height:60px; text-align:center;";
+        sty_1.forEach((v, i) => {
+          sty_1[i].style.backgroundColor = "black";
+          sty_1[i].style.margin = "auto";
+          sty_1[i].style.width = "20%";
+          sty_1[i].style.color = "white";
+        });
+        div1.addEventListener("mouseover", () => {
+          sty_1[0].style.cssText =
+            "background-color : red; margin : auto; width:20%; color:white;";
+        });
+        div1.addEventListener("mouseleave", () => {
+          sty_1[0].style.cssText =
+            "background-color : black; margin : auto;width:20%;color:white;";
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="About" class="content">
+      <h1>About</h1>
+      <p>Custom Software Development Company</p>
+    </div>
+
+    <div id="Products" class="content">
+      <h1>Products</h1>
+      <p>
+        Building tailored software to address critical needs of global
+        enterprises.
+      </p>
+    </div>
+
+    <div id="Technology" class="content">
+      <h1>Technology</h1>
+      <p>Machine Learning, Artificial Intelligent, Cloud Platform.</p>
+    </div>
+
+    <div id="Downloads" class="content">
+      <h1>Downloads</h1>
+      <p>You can download a free 10 days trial.</p>
+    </div>
+
+    <div id="Etc" class="content">
+      <h1>Etc</h1>
+      <p>Everything is fine.</p>
+    </div>
+  </body>
+</html>

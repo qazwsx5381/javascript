@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      students = {
+        이름: "구름",
+        국어: 87,
+        영어: 98,
+        수학: 88,
+        과학: 90,
+        getName() {
+          return this.이름;
+        },
+        getKorean() {
+          return this.국어;
+        },
+        getEnglish() {
+          return this.영어;
+        },
+        getMath() {
+          return this.수학;
+        },
+        getScience() {
+          return this.과학;
+        },
+        setKorean(value) {
+          if (value < 60 || value > 100) {
+            throw "국어점수를 다시 입력하세요";
+          } else {
+            this.국어 = value;
+          }
+        },
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
