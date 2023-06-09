@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클로저1</title>
+    <script>
+      // 클로저 특징
+      // 기억, 메모리가 소모
+      // 외부 접근 제한
+      // return 필수
+      function addFunc(x) {
+        return function (y) {
+          return x + y;
+        };
+      }
+      const addFunc2 = addFunc(5);
+    </script>
+  </head>
+  <body></body>
+</html>

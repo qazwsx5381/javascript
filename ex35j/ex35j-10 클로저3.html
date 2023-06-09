@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클로저3</title>
+  </head>
+  <body>
+    <h1>Count is <span>0</span></h1>
+    <script>
+      //   function init() {
+      //     const span = document.querySelector("span");
+      //     let count = 0;
+      //     const a2 = setInterval(() => {
+      //       count++;
+      //       span.textContent = count;
+      //     }, 1000);
+      //     return function () {
+      //       count = 0;
+      //       clearInterval(a2);
+      //       span.textContent = 0;
+      //     };
+      //   }
+      function init() {
+        const span = document.querySelector("span");
+        let count = 0;
+        setInterval(() => {
+          count++;
+          span.textContent = count;
+        }, 1000);
+        function reset() {
+          count = 0;
+          span.textContent = count;
+        }
+        return { reset }; //{reset:reset}
+      }
+    </script>
+  </body>
+</html>

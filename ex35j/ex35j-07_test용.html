@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const array = ["About", "Products", "Technology", "Downloads", "Etc"];
+        const div = document.createElement("div");
+        const div1 = document.createElement("div");
+        const div2 = document.createElement("div");
+        const div3 = document.createElement("div");
+        const div4 = document.createElement("div");
+        const div5 = document.createElement("div");
+        document.body.append(div);
+        div.classList = "mov";
+        div.append(div1, div2, div3, div4, div5);
+        div1.classList = "mov_1";
+        div2.classList = "mov_1";
+        div3.classList = "mov_1";
+        div4.classList = "mov_1";
+        div5.classList = "mov_1";
+        div1.textContent = array[0];
+        div2.textContent = array[1];
+        div3.textContent = array[2];
+        div4.textContent = array[3];
+        div5.textContent = array[4];
+        let sty = document.querySelector("div.mov");
+        let sty_1 = document.querySelectorAll("div.mov_1");
+        sty.style.cssText = "display:flex; flex-direction:row; width:100%";
+        sty_1.forEach((v, i) => {
+          sty_1[
+            i
+          ].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+        });
+        document.getElementById("About").style.cssText =
+          "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:black;";
+        document.getElementById("Products").style.display = "none";
+        document.getElementById("Technology").style.display = "none";
+        document.getElementById("Downloads").style.display = "none";
+        document.getElementById("Etc").style.display = "none";
+        const a1 = setTimeout(() => {
+          sty_1[0].style.cssText = `background-color:red; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[1].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[2].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[3].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[4].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("About").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:red;";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        }, 0);
+        const a2 = setTimeout(() => {
+          sty_1[0].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[1].style.cssText = `background-color:orange; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[2].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[3].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[4].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Products").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:orange;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        }, 1000);
+        const a3 = setTimeout(() => {
+          sty_1[0].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[1].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[2].style.cssText = `background-color:yellow; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:black; display:flex; justify-content:center; align-items:center;`;
+          sty_1[3].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[4].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Technology").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:black; background-color:yellow;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        }, 2000);
+        const a4 = setTimeout(() => {
+          sty_1[0].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[1].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[2].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[3].style.cssText = `background-color:green; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[4].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Downloads").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:green;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        }, 3000);
+        const a5 = setTimeout(() => {
+          sty_1[0].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[1].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[2].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[3].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          sty_1[4].style.cssText = `background-color:blue; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Etc").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:blue;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+        }, 4000);
+        function t1() {
+          setTimeout(() => {
+            sty_1[0].style.cssText = `background-color:red; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[1].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[2].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[3].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[4].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            document.getElementById("About").style.cssText =
+              "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:red;";
+            document.getElementById("Products").style.display = "none";
+            document.getElementById("Technology").style.display = "none";
+            document.getElementById("Downloads").style.display = "none";
+            document.getElementById("Etc").style.display = "none";
+          }, 0);
+        }
+        function t2() {
+          setTimeout(() => {
+            sty_1[0].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[1].style.cssText = `background-color:orange; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[2].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[3].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[4].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            document.getElementById("Products").style.cssText =
+              "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:orange;";
+            document.getElementById("About").style.display = "none";
+            document.getElementById("Technology").style.display = "none";
+            document.getElementById("Downloads").style.display = "none";
+            document.getElementById("Etc").style.display = "none";
+          }, 1000);
+        }
+        function t3() {
+          setTimeout(() => {
+            sty_1[0].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[1].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[2].style.cssText = `background-color:yellow; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:black; display:flex; justify-content:center; align-items:center;`;
+            sty_1[3].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[4].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            document.getElementById("Technology").style.cssText =
+              "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:black; background-color:yellow;";
+            document.getElementById("About").style.display = "none";
+            document.getElementById("Products").style.display = "none";
+            document.getElementById("Downloads").style.display = "none";
+            document.getElementById("Etc").style.display = "none";
+          }, 2000);
+        }
+        function t4() {
+          setTimeout(() => {
+            sty_1[0].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[1].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[2].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[3].style.cssText = `background-color:green; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[4].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            document.getElementById("Downloads").style.cssText =
+              "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:green;";
+            document.getElementById("About").style.display = "none";
+            document.getElementById("Products").style.display = "none";
+            document.getElementById("Technology").style.display = "none";
+            document.getElementById("Etc").style.display = "none";
+          }, 3000);
+        }
+        function t5() {
+          setTimeout(() => {
+            sty_1[0].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[1].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[2].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[3].style.cssText = `background-color:black; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            sty_1[4].style.cssText = `background-color:blue; padding:auto 0px; width:${
+              100 / array.length
+            }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+            document.getElementById("Etc").style.cssText =
+              "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:blue;";
+            document.getElementById("About").style.display = "none";
+            document.getElementById("Products").style.display = "none";
+            document.getElementById("Downloads").style.display = "none";
+            document.getElementById("Technology").style.display = "none";
+          }, 4000);
+        }
+        function t1() {
+          setInterval(() => {
+            setTimeout(t1, 0);
+            setTimeout(t2, 0);
+            setTimeout(t3, 0);
+            setTimeout(t4, 0);
+            setTimeout(t5, 0);
+          }, 5000);
+        }
+        const t_1 = setInterval(() => {
+          setTimeout(t1, 0);
+          setTimeout(t2, 0);
+          setTimeout(t3, 0);
+          setTimeout(t4, 0);
+          setTimeout(t5, 0);
+        }, 5000);
+        div1.addEventListener("mouseover", () => {
+          clearTimeout(a1);
+          clearTimeout(a2);
+          clearTimeout(a3);
+          clearTimeout(a4);
+          clearTimeout(a5);
+          clearInterval(t_1);
+          sty_1[0].style.cssText = `background-color:red; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("About").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:red;";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        });
+        div1.addEventListener("mouseleave", () => {
+          setTimeout(t1, 0);
+          setTimeout(t2, 0);
+          setTimeout(t3, 0);
+          setTimeout(t4, 0);
+          setTimeout(t5, 0);
+          setInterval(t_1, 5000);
+          sty_1[0].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("About").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:black;";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+          // setInterval(t_1);
+        });
+        div2.addEventListener("mouseover", () => {
+          sty_1[1].style.cssText = `background-color:orange; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Products").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:orange;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        });
+        div2.addEventListener("mouseleave", () => {
+          sty_1[1].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Products").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:black;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        });
+        div3.addEventListener("mouseover", () => {
+          sty_1[2].style.cssText = `background-color:yellow; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:black; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Technology").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:black; background-color:yellow;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        });
+        div3.addEventListener("mouseleave", () => {
+          sty_1[2].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Technology").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:black;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        });
+        div4.addEventListener("mouseover", () => {
+          sty_1[3].style.cssText = `background-color:green; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Downloads").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:green;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        });
+        div4.addEventListener("mouseleave", () => {
+          sty_1[3].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Downloads").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:black;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        });
+        div5.addEventListener("mouseover", () => {
+          sty_1[4].style.cssText = `background-color:blue; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Etc").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:blue;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+        });
+        div5.addEventListener("mouseleave", () => {
+          sty_1[4].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Etc").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:black;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="About" class="content">
+      <h1>About</h1>
+      <p>Custom Software Development Company</p>
+    </div>
+
+    <div id="Products" class="content">
+      <h1>Products</h1>
+      <p>
+        Building tailored software to address critical needs of global
+        enterprises.
+      </p>
+    </div>
+
+    <div id="Technology" class="content">
+      <h1>Technology</h1>
+      <p>Machine Learning, Artificial Intelligent, Cloud Platform.</p>
+    </div>
+
+    <div id="Downloads" class="content">
+      <h1>Downloads</h1>
+      <p>You can download a free 10 days trial.</p>
+    </div>
+
+    <div id="Etc" class="content">
+      <h1>Etc</h1>
+      <p>Everything is fine.</p>
+    </div>
+  </body>
+</html>

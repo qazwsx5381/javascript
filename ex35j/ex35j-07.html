@@ -29,21 +29,129 @@
         div5.textContent = array[4];
         let sty = document.querySelector("div.mov");
         let sty_1 = document.querySelectorAll("div.mov_1");
-        sty.style.cssText =
-          "flex-direction:column; color:white; height:60px; text-align:center;";
+        sty.style.cssText = "display:flex; flex-direction:row; width:100%;";
         sty_1.forEach((v, i) => {
-          sty_1[i].style.backgroundColor = "black";
-          sty_1[i].style.margin = "auto";
-          sty_1[i].style.width = "20%";
-          sty_1[i].style.color = "white";
+          sty_1[
+            i
+          ].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
         });
+        document.getElementById("About").style.cssText =
+          "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:black;";
+        document.getElementById("Products").style.display = "none";
+        document.getElementById("Technology").style.display = "none";
+        document.getElementById("Downloads").style.display = "none";
+        document.getElementById("Etc").style.display = "none";
         div1.addEventListener("mouseover", () => {
-          sty_1[0].style.cssText =
-            "background-color : red; margin : auto; width:20%; color:white;";
+          sty_1[0].style.cssText = `background-color:red; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("About").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:red;";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
         });
         div1.addEventListener("mouseleave", () => {
-          sty_1[0].style.cssText =
-            "background-color : black; margin : auto;width:20%;color:white;";
+          sty_1[0].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("About").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:black;";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        });
+        div2.addEventListener("mouseover", () => {
+          sty_1[1].style.cssText = `background-color:orange; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Products").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:orange;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        });
+        div2.addEventListener("mouseleave", () => {
+          sty_1[1].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Products").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:black;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        });
+        div3.addEventListener("mouseover", () => {
+          sty_1[2].style.cssText = `background-color:yellow; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:black; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Technology").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:black; background-color:yellow;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        });
+        div3.addEventListener("mouseleave", () => {
+          sty_1[2].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Technology").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:black;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        });
+        div4.addEventListener("mouseover", () => {
+          sty_1[3].style.cssText = `background-color:green; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Downloads").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:green;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        });
+        div4.addEventListener("mouseleave", () => {
+          sty_1[3].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Downloads").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:black;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+          document.getElementById("Etc").style.display = "none";
+        });
+        div5.addEventListener("mouseover", () => {
+          sty_1[4].style.cssText = `background-color:blue; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Etc").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:blue;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
+        });
+        div5.addEventListener("mouseleave", () => {
+          sty_1[4].style.cssText = `background-color:black; padding:auto 0px; width:${
+            100 / array.length
+          }%; height:50px; color:white; display:flex; justify-content:center; align-items:center;`;
+          document.getElementById("Etc").style.cssText =
+            "display:flex; flex-direction:column; width:100%; height:200px; justify-content:center; align-items:center; color:white; background-color:black;";
+          document.getElementById("About").style.display = "none";
+          document.getElementById("Products").style.display = "none";
+          document.getElementById("Downloads").style.display = "none";
+          document.getElementById("Technology").style.display = "none";
         });
       });
     </script>

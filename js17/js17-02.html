@@ -1,65 +1,92 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>신호등 만들기</title>
     <!-- <style>
-        .a{
-            border: 1px solid black;
-            width: 500px;
-            height: 200px;
-            border-radius: 20px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background-color: black;
-        }
-        div {
-            border: 1px solid black;
-            border-radius: 100px;
-            height: 100px;
-            width: 100px;
-            display: inline-block;
-            background-color: white;
-        }
+      .a {
+        border: 1px solid black;
+        width: 500px;
+        height: 200px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: black;
+      }
+      div {
+        border: 1px solid black;
+        border-radius: 100px;
+        height: 100px;
+        width: 100px;
+        display: inline-block;
+        background-color: white;
+      }
     </style> -->
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        const t1 = setInterval(()=>{
-            t1_1 = setTimeout(()=>{
-            document.close()
-            document.write(`<div style="width: 400px; height: 150px; background-color: antiquewhite; border-radius: 20px; border: 3px solid #000; display: flex; justify-content:space-evenly; align-items: center;">`)
-            document.write(`<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: gray;"></div>`)
-            document.write(`<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: gray;"></div>`)
-            document.write(`<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: green;"></div>`)
-            document.write(`</div>`)},0*1000)
-            t1_2 = setTimeout(()=>{
-            document.close()
-            document.write(`<div style="width: 400px; height: 150px; background-color: antiquewhite; border-radius: 20px; border: 3px solid #000; display: flex; justify-content:space-evenly; align-items: center;">`)
-            document.write(`<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: gray;"></div>`)
-            document.write(`<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: yellow;"></div>`)
-            document.write(`<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: gray;"></div>`)
-            document.write(`</div>`)},4*1000)
-            t1_3 = setTimeout(()=>{
-            document.close()
-            document.write(`<div style="width: 400px; height: 150px; background-color: antiquewhite; border-radius: 20px; border: 3px solid #000; display: flex; justify-content:space-evenly; align-items: center;">`)
-            document.write(`<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: red;"></div>`)
-            document.write(`<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: gray;"></div>`)
-            document.write(`<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: gray;"></div>`)
-            document.write(`</div>`)},5*1000)
-        },8*1000)
-        // let t1_3= setInterval(()=>{
-        //     //document.close()
-        //     document.write(`<div style="border: 1px solid black; border-radius: 100px; height: 100px; width: 100px; display: inline-block; background-color: yellow;"></div>`)},1.5*1000)
-        // let t1 = setInterval(()=>{
+      const t1 = setInterval(() => {
+        t1_1 = setTimeout(() => {
+          document.close();
+          document.write(
+            `<div style="width: 400px; height: 150px; background-color: antiquewhite; border-radius: 20px; border: 3px solid #000; display: flex; justify-content:space-evenly; align-items: center;">`
+          );
+          document.write(
+            `<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: gray;"></div>`
+          );
+          document.write(
+            `<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: gray;"></div>`
+          );
+          document.write(
+            `<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: green;"></div>`
+          );
+          document.write(`</div>`);
+        }, 0 * 1000);
+        t1_2 = setTimeout(() => {
+          document.close();
+          document.write(
+            `<div style="width: 400px; height: 150px; background-color: antiquewhite; border-radius: 20px; border: 3px solid #000; display: flex; justify-content:space-evenly; align-items: center;">`
+          );
+          document.write(
+            `<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: gray;"></div>`
+          );
+          document.write(
+            `<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: yellow;"></div>`
+          );
+          document.write(
+            `<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: gray;"></div>`
+          );
+          document.write(`</div>`);
+        }, 4 * 1000);
+        t1_3 = setTimeout(() => {
+          document.close();
+          document.write(
+            `<div style="width: 400px; height: 150px; background-color: antiquewhite; border-radius: 20px; border: 3px solid #000; display: flex; justify-content:space-evenly; align-items: center;">`
+          );
+          document.write(
+            `<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: red;"></div>`
+          );
+          document.write(
+            `<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: gray;"></div>`
+          );
+          document.write(
+            `<div style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #000; background-color: gray;"></div>`
+          );
+          document.write(`</div>`);
+        }, 5 * 1000);
+      }, 8 * 1000);
+      // let t1_3= setInterval(()=>{
+      //     //document.close()
+      //     document.write(`<div style="border: 1px solid black; border-radius: 100px; height: 100px; width: 100px; display: inline-block; background-color: yellow;"></div>`)},1.5*1000)
+      // let t1 = setInterval(()=>{
 
-        //     document.write(`<div style="border: 1px solid black; border-radius: 100px; height: 100px; width: 100px; display: inline-block; background-color: white;"></div>`)},0.5*1000)
-        // let tim = setInterval(()=>{
+      //     document.write(`<div style="border: 1px solid black; border-radius: 100px; height: 100px; width: 100px; display: inline-block; background-color: white;"></div>`)},0.5*1000)
+      // let tim = setInterval(()=>{
 
-        //     document.write(`<div style="border: 1px solid black; border-radius: 100px; height: 100px; width: 100px; display: inline-block; background-color: red;"></div>`)},1.5*1000)
+      //     document.write(`<div style="border: 1px solid black; border-radius: 100px; height: 100px; width: 100px; display: inline-block; background-color: red;"></div>`)},1.5*1000)
     </script>
-</body>
+  </body>
 </html>
